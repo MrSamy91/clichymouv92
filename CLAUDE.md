@@ -10,10 +10,10 @@ This is a Next.js 15 website for Clichymouv92, an association for movement and w
 
 **Development:**
 ```bash
-npm run dev          # Start development server with Turbopack
-npm run build        # Build for production with Turbopack
-npm run start        # Start production server
-npm run lint         # Run ESLint
+pnpm run dev          # Start development server with Turbopack
+pnpm run build        # Build for production with Turbopack
+pnpm run start        # Start production server
+pnpm run lint         # Run ESLint
 ```
 
 **Package Manager:** This project uses pnpm (evidenced by pnpm-lock.yaml)

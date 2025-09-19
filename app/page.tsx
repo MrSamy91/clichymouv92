@@ -57,7 +57,7 @@ export default async function HomePage() {
                 Activités Sportives
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Découvrez nos programmes d'activités physiques adaptés à tous les niveaux.
+                Découvrez nos programmes d&apos;activités physiques adaptés à tous les niveaux.
               </p>
             </div>
 
@@ -75,7 +75,7 @@ export default async function HomePage() {
                 Communauté
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Faites partie d'une communauté dynamique et bienveillante.
+                Faites partie d&apos;une communauté dynamique et bienveillante.
               </p>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default async function HomePage() {
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Découvrez les entreprises créées et dirigées par nos membres. 
-              Une communauté d'entrepreneurs engagés dans le mouvement et le bien-être.
+              Une communauté d&apos;entrepreneurs engagés dans le mouvement et le bien-être.
             </p>
           </div>
           

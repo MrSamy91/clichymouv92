@@ -109,7 +109,7 @@ export default async function ContactPage() {
                   >
                     <option value="">Sélectionnez un sujet</option>
                     <option value="inscription">Inscription aux activités</option>
-                    <option value="information">Demande d'information</option>
+                    <option value="information">Demande d&apos;information</option>
                     <option value="partenariat">Proposition de partenariat</option>
                     <option value="autre">Autre</option>
                   </select>

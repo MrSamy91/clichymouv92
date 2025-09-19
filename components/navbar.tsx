@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +32,7 @@ export default function Navbar() {
       <nav className="flex justify-between items-center">
         {/* Logo */}
         <div className="z-50 relative">
-          <a href="/" onClick={closeMenu} className="block">
+          <Link href="/" onClick={closeMenu} className="block">
             <Image
               src="/logo-clichy-mouv.PNG"
               alt="Clichymouv92"
@@ -40,13 +41,13 @@ export default function Navbar() {
               className="h-12 w-auto"
               priority
             />
-          </a>
+          </Link>
         </div>
 
         {/* Navigation Desktop */}
         <div className="hidden md:flex space-x-6">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className={`${
@@ -56,7 +57,7 @@ export default function Navbar() {
               } transition-colors`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -93,7 +94,7 @@ export default function Navbar() {
         >
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={closeMenu}
@@ -104,7 +105,7 @@ export default function Navbar() {
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

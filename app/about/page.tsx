@@ -28,7 +28,7 @@ export default async function AboutPage() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                  Clichymouv92 a pour mission de promouvoir le bien-être et l'activité physique 
+                  Clichymouv92 a pour mission de promouvoir le bien-être et l&apos;activité physique 
                   pour tous les habitants de Clichy-la-Garenne et des environs.
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -150,7 +150,7 @@ export default async function AboutPage() {
                   Bienveillance
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Accompagnement dans la bienveillance et l'écoute
+                  Accompagnement dans la bienveillance et l&apos;écoute
                 </p>
               </div>
               <div className="text-center p-4 border border-gray-200 dark:border-gray-700 rounded-lg">

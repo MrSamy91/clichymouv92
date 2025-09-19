@@ -238,7 +238,7 @@ export default async function ProjectsPage() {
             </h3>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
               Vous avez une idée de projet en lien avec nos activités ? 
-              N'hésitez pas à nous la soumettre !
+              N&apos;hésitez pas à nous la soumettre !
             </p>
             <a 
               href="/contact" 

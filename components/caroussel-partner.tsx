@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
 interface Partner {
@@ -23,19 +23,7 @@ export default function CarousselPartner({ partners }: CarousselPartnerProps) {
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Auto-slide toutes les 5 secondes
-  useEffect(() => {
-    if (!isAutoPlaying || partners.length === 0 || isTransitioning) return;
-
-    const interval = setInterval(() => {
-      const newIndex = currentIndex === partners.length - 1 ? 0 : currentIndex + 1;
-      changeSlide(newIndex);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [currentIndex, isAutoPlaying, partners.length, isTransitioning]);
-
-  const changeSlide = (newIndex: number) => {
+  const changeSlide = useCallback((newIndex: number) => {
     if (isTransitioning) return; // Empêche les transitions multiples
     
     setIsTransitioning(true);
@@ -49,7 +37,19 @@ export default function CarousselPartner({ partners }: CarousselPartnerProps) {
     setTimeout(() => {
       setIsTransitioning(false);
     }, 300);
-  };
+  }, [isTransitioning]);
+
+  // Auto-slide toutes les 5 secondes
+  useEffect(() => {
+    if (!isAutoPlaying || partners.length === 0 || isTransitioning) return;
+
+    const interval = setInterval(() => {
+      const newIndex = currentIndex === partners.length - 1 ? 0 : currentIndex + 1;
+      changeSlide(newIndex);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex, isAutoPlaying, partners.length, isTransitioning, changeSlide]);
 
   const goToPrevious = () => {
     setIsAutoPlaying(false);
