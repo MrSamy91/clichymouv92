@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  /* Palette de couleurs Clichymouv92 */
+  --black: #000000;
+  --white: #ffffff;
+  --light-gray: #f8f7f7;
+  --pink: #e22263;
+  --purple-dark: #81418e;
+  --purple: #5a4593;
+  --blue-dark: #40569d;
+  --blue-medium: #586db1;
+  --blue-light: #40a2d9;
+  --cyan: #29b6d0;
+
+  /* Variables principales */
+  --background: var(--white);
+  --foreground: var(--black);
+  --primary: var(--pink);
+  --secondary: var(--purple);
+  --accent: var(--blue-light);
+  --muted: var(--light-gray);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* Couleurs personnalisées pour Tailwind */
+  --color-primary-50: #fef2f5;
+  --color-primary-100: #fde6eb;
+  --color-primary-200: #fbc2d1;
+  --color-primary-300: #f794ad;
+  --color-primary-400: #f15985;
+  --color-primary-500: var(--pink);
+  --color-primary-600: #c91e56;
+  --color-primary-700: #a9194a;
+  --color-primary-800: #8e1740;
+  --color-primary-900: #7a1739;
+  
+  --color-secondary-50: #f7f4f9;
+  --color-secondary-100: #efe8f3;
+  --color-secondary-200: #e2d5ea;
+  --color-secondary-300: #cdb5dc;
+  --color-secondary-400: #b08cc9;
+  --color-secondary-500: var(--purple);
+  --color-secondary-600: #8a5db5;
+  --color-secondary-700: #744ba0;
+  --color-secondary-800: #624085;
+  --color-secondary-900: #52366e;
+  
+  --color-accent-50: #f0f9ff;
+  --color-accent-100: #e0f2fe;
+  --color-accent-200: #bae6fd;
+  --color-accent-300: #7dd3fc;
+  --color-accent-400: var(--blue-light);
+  --color-accent-500: #0ea5e9;
+  --color-accent-600: #0284c7;
+  --color-accent-700: #0369a1;
+  --color-accent-800: #075985;
+  --color-accent-900: #0c4a6e;
+  
+  --color-muted: var(--light-gray);
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-purple-dark: var(--purple-dark);
+  --color-blue-dark: var(--blue-dark);
+  --color-blue-medium: var(--blue-medium);
+  --color-cyan: var(--cyan);
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--black);
+    --foreground: var(--white);
+    --muted: #1a1a1a;
+  }
+}
+
+body {
+  background: linear-gradient(135deg, 
+    var(--pink) 0%, 
+    var(--purple-dark) 15%, 
+    var(--purple) 30%, 
+    var(--blue-dark) 45%, 
+    var(--blue-medium) 60%, 
+    var(--blue-light) 75%, 
+    var(--cyan) 100%
+  );
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Gradient personnalisé pour les conteneurs */
+.gradient-bg {
+  background: linear-gradient(135deg, 
+    var(--pink) 0%, 
+    var(--purple-dark) 15%, 
+    var(--purple) 30%, 
+    var(--blue-dark) 45%, 
+    var(--blue-medium) 60%, 
+    var(--blue-light) 75%, 
+    var(--cyan) 100%
+  );
+}
+
+.gradient-bg-subtle {
+  background: linear-gradient(135deg, 
+    rgba(226, 34, 99, 0.1) 0%, 
+    rgba(129, 65, 142, 0.1) 15%, 
+    rgba(90, 69, 147, 0.1) 30%, 
+    rgba(64, 86, 157, 0.1) 45%, 
+    rgba(88, 109, 177, 0.1) 60%, 
+    rgba(64, 162, 217, 0.1) 75%, 
+    rgba(41, 182, 208, 0.1) 100%
+  );
+}
