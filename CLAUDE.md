@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 15 website for Clichymouv92, an association for movement and wellness in Clichy-la-Garenne. The site is built with React 19, TypeScript, and Tailwind CSS 4.
+This is a Next.js 15 website for ClichyMouv, an association for movement and wellness in Clichy-la-Garenne. The site is built with React 19, TypeScript, and Tailwind CSS 4.
 
 ## Common Commands
 
@@ -30,13 +30,18 @@ pnpm run lint         # Run ESLint
 - `/` - Homepage with hero section
 - `/about` - About page with 4 sections: Notre But, Nos Moyens, Notre Réseau, Nos Valeurs
 - `/partners` - Partners page displaying local business partners
+- `/adherants` - Members page
 - `/contact` - Contact page
 - `/projets` - Projects page
 
 **Components Architecture:**
 - `components/navbar.tsx` - Main navigation with mobile hamburger menu, uses logo image
-- `components/partner-list.tsx` - Displays partner cards with images, addresses, and website links
+- `components/navbar-vertical.tsx` - Vertical navigation component
+- `components/hero-section.tsx` - Hero section for homepage
+- `components/footer.tsx` - Site footer component
+- `components/logo-partner-list.tsx` - Partner logos display component
 - `components/caroussel-partner.tsx` - Partner carousel component
+- `components/adherant-list.tsx` - Members/adherents list component
 
 **Data Patterns:**
 - Partners data is defined directly in `app/partners/page.tsx` as async function
@@ -49,6 +54,7 @@ pnpm run lint         # Run ESLint
 - Dark mode support throughout components
 - Responsive design patterns (md:, lg: breakpoints)
 - Geist fonts (Sans and Mono) loaded via next/font/google
+- React Icons (react-icons) for iconography
 
 **Image Handling:**
 - Uses `next/image` for optimized image loading

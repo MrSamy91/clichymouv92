@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
-import PartnerList from '@/components/partner-list';
+import LogoPartnerList from '@/components/logo-partner-list';
+import HeroSection from '@/components/hero-section';
 
 export const metadata: Metadata = {
-  title: 'Partenaires - Clichymouv92',
-  description: 'Découvrez nos partenaires qui soutiennent les activités de Clichymouv92',
+  title: 'Partenaires - ClichyMouv',
+  description: 'Découvrez nos partenaires qui soutiennent les activités de ClichyMouv',
 };
 
 interface Partner {
@@ -21,93 +22,43 @@ async function getPartners(): Promise<Partner[]> {
   return [
     {
       id: 1,
-      name: "Delphine Martin",
-      company: "Boutique Mode & Style",
-      type: "Partenaire commercial",
-      description: "Spécialiste en vêtements sportifs et casual, offre des réductions pour nos membres.",
-      website: "https://www.mode-style-clichy.fr",
-      logo: "/images/personnes/Delphine.png",
-      address: "15 Rue Martre, 92110 Clichy"
+      name: "Ville de Clichy",
+      company: "Mairie de Clichy-la-Garenne",
+      type: "Partenaire institutionnel",
+      description: "Partenaire institutionnel principal soutenant le développement des activités sportives et de bien-être dans la commune.",
+      website: "https://www.ville-clichy.fr/",
+      logo: "/images/partners/ville-clichy.svg",
+      address: "Place du 11 Novembre 1918, 92110 Clichy-la-Garenne"
     },
     {
       id: 2,
-      name: "Iliès Benali",
-      company: "Restaurant Le Maghreb",
-      type: "Partenaire restauration",
-      description: "Cuisine traditionnelle méditerranéenne, menus équilibrés pour sportifs.",
-      website: "https://www.restaurant-maghreb-clichy.fr",
-      logo: "/images/personnes/ilies.png",
-      address: "32 Boulevard Jean Jaurès, 92110 Clichy"
+      name: "Département des Hauts-de-Seine",
+      company: "Conseil Départemental des Hauts-de-Seine",
+      type: "Partenaire institutionnel",
+      description: "Soutien départemental pour les initiatives associatives et les projets de développement local.",
+      website: "https://www.hauts-de-seine.fr/",
+      logo: "/images/partners/hauts-de-seine.webp",
+      address: "92 Avenue André Morizet, 92100 Boulogne-Billancourt"
     },
     {
       id: 3,
-      name: "Marie Dupont",
-      company: "Pharmacie de la Paix",
-      type: "Partenaire santé",
-      description: "Conseils santé, compléments alimentaires et suivi pour nos sportifs.",
-      website: "https://www.pharmacie-paix-clichy.fr",
-      logo: "/images/personnes/personne_1.png",
-      address: "8 Place de la Paix, 92110 Clichy"
+      name: "Clichy Mécénat",
+      company: "Fondation Clichy Mécénat",
+      type: "Partenaire mécénat",
+      description: "Fondation locale dédiée au soutien des projets associatifs et culturels de Clichy-la-Garenne.",
+      website: "",
+      logo: "/images/partners/clichy-mecenat.webp",
+      address: "Clichy-la-Garenne, 92110"
     },
     {
       id: 4,
-      name: "Ahmed Kassim",
-      company: "Coiffure Moderne",
-      type: "Partenaire bien-être",
-      description: "Salon de coiffure mixte, services de relaxation et soins capillaires.",
-      website: "https://www.coiffure-moderne-clichy.fr",
-      logo: "/images/personnes/personne_2.png",
-      address: "45 Rue de la République, 92110 Clichy"
-    },
-    {
-      id: 5,
-      name: "Sophie Moreau",
-      company: "Boulangerie des Délices",
-      type: "Partenaire alimentaire",
-      description: "Pain bio, pâtisseries santé et produits nutritionnels pour sportifs.",
-      website: "https://www.delices-clichy.fr",
-      logo: "/images/personnes/personne_3.png",
-      address: "12 Avenue Victor Hugo, 92110 Clichy"
-    },
-    {
-      id: 6,
-      name: "Carlos Rodriguez",
-      company: "Garage Auto Plus",
-      type: "Partenaire automobile",
-      description: "Entretien véhicules, réparations et tarifs préférentiels pour nos adhérents.",
-      website: "https://www.autoplus-clichy.fr",
-      logo: "/images/personnes/personne_4.png",
-      address: "67 Rue Martre, 92110 Clichy"
-    },
-    {
-      id: 7,
-      name: "Fatima El Mansouri",
-      company: "Épicerie du Monde",
-      type: "Partenaire alimentaire",
-      description: "Produits bio et internationaux, fruits secs et aliments énergétiques.",
-      website: "https://www.epicerie-monde-clichy.fr",
-      logo: "/images/personnes/personne_5.png",
-      address: "23 Boulevard Victor Hugo, 92110 Clichy"
-    },
-    {
-      id: 8,
-      name: "Jean-Pierre Legrand",
-      company: "Tabac Presse Central",
-      type: "Partenaire services",
-      description: "Point presse, services postaux et billetterie événements sportifs.",
-      website: "https://www.tabac-central-clichy.fr",
-      logo: "/images/personnes/personne_6.png",
-      address: "4 Place du Marché, 92110 Clichy"
-    },
-    {
-      id: 9,
-      name: "Amina Benkirane",
-      company: "Institut de Beauté Zen",
-      type: "Partenaire bien-être",
-      description: "Soins esthétiques, massages de récupération et relaxation.",
-      website: "https://www.institut-zen-clichy.fr",
-      logo: "/images/personnes/personne_7.png",
-      address: "18 Rue de la Liberté, 92110 Clichy"
+      name: "CCI Hauts-de-Seine",
+      company: "Chambre de Commerce et d'Industrie des Hauts-de-Seine",
+      type: "Partenaire économique",
+      description: "Chambre de Commerce et d'Industrie accompagnant le développement économique local et les partenariats entreprises-associations.",
+      website: "https://www.hauts-de-seine.cci.fr/",
+      logo: "/images/partners/cci-hauts-de-seine.svg",
+      address: "179 Avenue Georges Clemenceau, 92000 Nanterre"
     }
   ];
 }
@@ -115,40 +66,25 @@ async function getPartners(): Promise<Partner[]> {
 export default async function PartnersPage() {
   const partners = await getPartners();
 
-  const institutionalPartners = partners.filter(p => p.type.includes('institutionnel') || p.type.includes('public'));
-  const businessPartners = partners.filter(p => !p.type.includes('institutionnel') && !p.type.includes('public'));
-
   return (
     <div>
+      <HeroSection 
+        description="ClichyMouv travaille avec des partenaires de confiance pour offrir les meilleures activités et services à notre communauté."
+        showLogo={true}
+      />
+      
       <main className="container mx-auto px-6 py-12">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold text-white mb-8 text-center">
-            Nos Partenaires
-          </h2>
 
-          <div className="text-center mb-12">
-            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-              Clichymouv92 travaille avec des partenaires de confiance pour offrir 
-              les meilleures activités et services à notre communauté.
-            </p>
-          </div>
-
-          <div className="mb-12">
-            <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
-              Partenaires Institutionnels
+          <div id="nos-partenaires" className="mb-12">
+            <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center font-subtitle">
+              Ils nous font confiance
             </h3>
-            <PartnerList partners={institutionalPartners} />
+            <LogoPartnerList partners={partners} />
           </div>
 
-          <div className="mb-12">
-            <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
-              Partenaires Privés
-            </h3>
-            <PartnerList partners={businessPartners} />
-          </div>
-
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+          <div className="!bg-white/10 dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-subtitle">
               Devenir Partenaire
             </h3>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
@@ -162,19 +98,10 @@ export default async function PartnersPage() {
               >
                 Nous contacter
               </a>
-              <button className="inline-block border border-indigo-600 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-600 hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors">
-                Télécharger notre dossier
-              </button>
             </div>
           </div>
         </div>
       </main>
-
-      <footer className="bg-gray-900 text-white py-8 mt-16">
-        <div className="container mx-auto px-6 text-center">
-          <p>&copy; 2024 Clichymouv92. Tous droits réservés.</p>
-        </div>
-      </footer>
     </div>
   );
 }

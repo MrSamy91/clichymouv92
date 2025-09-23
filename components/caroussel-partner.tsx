@@ -23,20 +23,20 @@ export default function CarousselPartner({ partners }: CarousselPartnerProps) {
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const changeSlide = useCallback((newIndex: number) => {
+  const changeSlide = useCallback((newIndex: number, direction: 'left' | 'right' = 'right') => {
     if (isTransitioning) return; // Empêche les transitions multiples
     
     setIsTransitioning(true);
     
-    // Changer l'index immédiatement avec transition CSS
+    // Changer l'index après un court délai pour l'animation
     setTimeout(() => {
       setCurrentIndex(newIndex);
-    }, 0);
+    }, 150);
     
-    // Fin de la transition après 300ms
+    // Fin de la transition après 500ms
     setTimeout(() => {
       setIsTransitioning(false);
-    }, 300);
+    }, 500);
   }, [isTransitioning]);
 
   // Auto-slide toutes les 5 secondes
@@ -45,7 +45,7 @@ export default function CarousselPartner({ partners }: CarousselPartnerProps) {
 
     const interval = setInterval(() => {
       const newIndex = currentIndex === partners.length - 1 ? 0 : currentIndex + 1;
-      changeSlide(newIndex);
+      changeSlide(newIndex, 'right');
     }, 5000);
 
     return () => clearInterval(interval);
@@ -54,20 +54,21 @@ export default function CarousselPartner({ partners }: CarousselPartnerProps) {
   const goToPrevious = () => {
     setIsAutoPlaying(false);
     const newIndex = currentIndex === 0 ? partners.length - 1 : currentIndex - 1;
-    changeSlide(newIndex);
+    changeSlide(newIndex, 'left');
     setTimeout(() => setIsAutoPlaying(true), 3000); // Reprend l'auto-play après 3s
   };
 
   const goToNext = () => {
     setIsAutoPlaying(false);
     const newIndex = currentIndex === partners.length - 1 ? 0 : currentIndex + 1;
-    changeSlide(newIndex);
+    changeSlide(newIndex, 'right');
     setTimeout(() => setIsAutoPlaying(true), 3000); // Reprend l'auto-play après 3s
   };
 
   const goToSlide = (index: number) => {
     setIsAutoPlaying(false);
-    changeSlide(index);
+    const direction = index > currentIndex ? 'right' : 'left';
+    changeSlide(index, direction);
     setTimeout(() => setIsAutoPlaying(true), 3000); // Reprend l'auto-play après 3s
   };
 
@@ -112,43 +113,50 @@ export default function CarousselPartner({ partners }: CarousselPartnerProps) {
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      {/* Slide actuel */}
-      <div className={`w-full h-full relative transition-all duration-300 ease-in-out ${
-        isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-      }`}>
-        {/* Image de fond */}
-        <Image
-          src={partners[currentIndex].src}
-          alt={partners[currentIndex].alt}
-          fill
-          className="object-cover object-center"
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 100vw"
-          priority={true}
-        />
-        {/* Overlay gradient pour la lisibilité */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20 z-10"></div>
+      {/* Container des slides */}
+      <div 
+        className={`flex w-full h-full transition-transform duration-500 ease-in-out`}
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {partners.map((partner, index) => (
+          <div key={partner.id} className="w-full h-full flex-shrink-0 relative">
+            {/* Image de fond */}
+            <Image
+              src={partner.src}
+              alt={partner.alt}
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 100vw"
+              priority={index === 0}
+            />
+            {/* Overlay blur pour effet de profondeur */}
+            <div className="absolute inset-0 backdrop-blur-sm z-5"></div>
+            {/* Overlay gradient pour la lisibilité */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20 z-10"></div>
 
-        {/* Contenu */}
-        <div className={`relative h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-8 z-20 transition-all duration-300 ease-in-out ${
-          isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
-        }`}>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg">
-            {partners[currentIndex].title}
-          </h3>
-          
-          <p className="text-sm sm:text-base md:text-lg text-white/90 mb-4 sm:mb-6 max-w-xl md:max-w-2xl leading-relaxed drop-shadow">
-            {partners[currentIndex].description}
-          </p>
+            {/* Contenu */}
+            <div className={`relative h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-8 z-20 transition-all duration-500 ease-in-out ${
+              index === currentIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}>
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 drop-shadow-lg font-title">
+                {partner.title}
+              </h3>
+              
+              <p className="text-sm sm:text-base md:text-lg text-white/90 mb-4 sm:mb-6 max-w-xl md:max-w-2xl leading-relaxed drop-shadow">
+                {partner.description}
+              </p>
 
-          <a
-            href={partners[currentIndex].link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold px-6 sm:px-8 py-2 sm:py-3 rounded-lg transition-all duration-300 border border-white/30 hover:border-white/50 hover:scale-105 text-sm sm:text-base"
-          >
-            Découvrir →
-          </a>
-        </div>
+              <a
+                href={partner.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold px-6 sm:px-8 py-2 sm:py-3 rounded-lg transition-all duration-300 border border-white/30 hover:border-white/50 hover:scale-105 text-sm sm:text-base"
+              >
+                Découvrir →
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Boutons de navigation */}

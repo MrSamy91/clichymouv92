@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { HiHome, HiUserGroup, HiClipboardDocumentList, HiPhone, HiInformationCircle } from 'react-icons/hi2';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,11 +21,11 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { href: '/', label: 'Accueil' },
-    { href: '/partners', label: 'Partenaires' },
-    { href: '/projets', label: 'Projets' },
-    { href: '/contact', label: 'Contact' },
-    { href: '/about', label: 'À propos' }
+    { href: '/', label: 'Accueil', icon: HiHome },
+    { href: '/partners', label: 'Partenaires', icon: HiUserGroup },
+    { href: '/projets', label: 'Projets', icon: HiClipboardDocumentList },
+    { href: '/contact', label: 'Contact', icon: HiPhone },
+    { href: '/about', label: 'À propos', icon: HiInformationCircle }
   ];
 
   return (
@@ -34,11 +35,11 @@ export default function Navbar() {
         <div className="z-50 relative">
           <Link href="/" onClick={closeMenu} className="block">
             <Image
-              src="/logo-clichy-mouv.PNG"
-              alt="Clichymouv92"
+              src="/logo-clichy-mouv2.webp"
+              alt="ClichyMouv"
               width={150}
               height={60}
-              className="h-12 w-auto"
+              className="h-20 w-auto"
               priority
             />
           </Link>
@@ -46,19 +47,23 @@ export default function Navbar() {
 
         {/* Navigation Desktop */}
         <div className="hidden md:flex space-x-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`${
-                isActive(link.href) 
-                  ? 'text-white font-semibold' 
-                  : 'text-white/80 hover:text-white'
-              } transition-colors`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const IconComponent = link.icon;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`${
+                  isActive(link.href) 
+                    ? 'text-white font-semibold' 
+                    : 'text-white/80 hover:text-white'
+                } transition-colors flex items-center gap-2 text-xl`}
+              >
+                <IconComponent className="text-2xl" />
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Bouton Hamburger Mobile */}
@@ -93,20 +98,24 @@ export default function Navbar() {
           }`}
         >
           <div className="flex flex-col items-center justify-center h-full space-y-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className={`text-2xl transition-colors ${
-                  isActive(link.href)
-                    ? 'text-white font-semibold'
-                    : 'text-white/80 hover:text-white'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const IconComponent = link.icon;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className={`text-4xl transition-colors flex items-center gap-3 ${
+                    isActive(link.href)
+                      ? 'text-white font-semibold'
+                      : 'text-white/80 hover:text-white'
+                  }`}
+                >
+                  <IconComponent className="text-5xl" />
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
 

@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import CarousselPartner from '@/components/caroussel-partner';
+import HeroSection from '@/components/hero-section';
 
 export const metadata: Metadata = {
-  title: 'Accueil - Clichymouv92',
+  title: 'Accueil - ClichyMouv',
   description: 'Association de mouvement et de bien-être à Clichy-la-Garenne',
 };
 
@@ -11,24 +12,24 @@ async function getPartnersData() {
   return [
     {
       id: 1,
-      src: "/esplanade_clichy.png",
+      src: "/images/photos_entreprises/esplanade_clichy.png",
       alt: "Logo et photos de l'Entreprise ",
-      title: "L'espllanade Clichy - Restaurant Ilies",
+      title: "L'ESPLANADE",
       description: "Voici l'esplanade clichy le restaurant de notre partenaire Ilies.",
       link: "https://esplanadeclichy.com"
     },
     {
       id: 2,
-      src: "/avantage_immo.webp", 
+      src: "/images/photos_entreprises/avantage_immo.webp", 
       alt: "Locaux de Avantage Immo",
-      title: "AVANTAGE_IMMO",
+      title: "AVANTAGE IMMOBILIER",
       description: "Avantage immo de Delphine propose des d'exceptionnels pour l'achat, la vente et la location de biens immobiliers.",
       link: "https://avantage-immobilier.fr/"
     },
     {
       id: 3,
-      src: "/mimetism.png",
-      alt: "Équipe de Mimetism", 
+      src: "/images/photos_entreprises/mimetism.png",
+      alt: "Équipe de Mimetism",
       title: "MIMETISM",
       description: "Jade de chez Mimetism avec son agence.",
       link: "https://mimetism.fr/"
@@ -40,20 +41,14 @@ export default async function HomePage() {
   const partnersData = await getPartnersData();
   return (
     <div>
+      <HeroSection />
+
       <main className="container mx-auto px-6 py-12">
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold text-white mb-6">
-            Bienvenue chez Clichymouv92
-          </h2>
-          
-          <p className="text-xl text-white/90 mb-8 leading-relaxed">
-            Association de mouvement et de bien-être à Clichy-la-Garenne.
-            Nous proposons des activités sportives et de loisirs pour tous les âges.
-          </p>
 
           <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="!bg-white/20 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 font-subtitle">
                 Activités Sportives
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
@@ -61,8 +56,8 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="!bg-white/20 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 font-subtitle">
                 Bien-être
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
@@ -70,8 +65,8 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="!bg-white/20 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 font-subtitle">
                 Communauté
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
@@ -83,7 +78,7 @@ export default async function HomePage() {
           <div className="mt-12">
             <a 
               href="/contact"
-              className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold px-8 py-3 rounded-lg transition-colors border border-white/30"
+              className="!bg-indigo-800/60 backdrop-blur-sm hover:bg-white/30 text-white font-semibold px-8 py-3 rounded-lg transition-colors border border-white/30"
             >
               Nous contacter
             </a>
@@ -93,7 +88,7 @@ export default async function HomePage() {
         {/* Section des entreprises partenaires */}
         <section className="mt-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4 font-title">
               Entreprises de nos Adhérents
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
@@ -105,12 +100,6 @@ export default async function HomePage() {
           <CarousselPartner partners={partnersData} />
         </section>
       </main>
-
-      <footer className="bg-gray-900 text-white py-8 mt-16">
-        <div className="container mx-auto px-6 text-center">
-          <p>&copy; 2024 Clichymouv92. Tous droits réservés.</p>
-        </div>
-      </footer>
     </div>
   );
 }

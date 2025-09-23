@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
+import HeroSection from '@/components/hero-section';
 
 export const metadata: Metadata = {
-  title: 'Projets - Clichymouv92',
-  description: 'Découvrez les projets et initiatives de l\'association Clichymouv92',
+  title: 'Projets - ClichyMouv',
+  description: 'Découvrez les projets et initiatives de l\'association ClichyMouv',
 };
 
 interface Project {
@@ -99,18 +100,18 @@ export default async function ProjectsPage() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'En cours':
-        return 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200';
+        return '!bg-green-100 dark:bg-green-900 !text-green-800 dark:text-green-200';
       case 'Terminé':
-        return 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200';
+        return '!bg-gray-100 dark:bg-gray-700 !text-gray-800 dark:text-gray-200';
       case 'À venir':
-        return 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200';
+        return '!bg-blue-100 dark:bg-blue-900 !text-blue-800 dark:text-blue-200';
       default:
-        return 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200';
+        return '!bg-gray-100 dark:bg-gray-700 !text-gray-800 dark:text-gray-200';
     }
   };
 
   const ProjectCard = ({ project }: { project: Project }) => (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+    <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
       <div className="flex items-start justify-between mb-4">
         <div className="text-4xl">{project.image}</div>
         <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getStatusColor(project.status)}`}>
@@ -118,7 +119,7 @@ export default async function ProjectsPage() {
         </span>
       </div>
       
-      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 font-subtitle">
         {project.title}
       </h3>
       
@@ -148,23 +149,18 @@ export default async function ProjectsPage() {
 
   return (
     <div>
+      <HeroSection 
+        description="Découvrez les initiatives et projets que nous menons pour promouvoir le mouvement et le bien-être dans notre communauté."
+        showLogo={true}
+      />
+      
       <main className="container mx-auto px-6 py-12">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold text-white mb-8 text-center">
-            Nos Projets
-          </h2>
-
-          <div className="text-center mb-12">
-            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-              Découvrez les initiatives et projets que nous menons pour promouvoir 
-              le mouvement et le bien-être dans notre communauté.
-            </p>
-          </div>
 
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+            <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
               <div className="text-3xl mb-4">🚀</div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 font-subtitle">
                 {activeProjects.length} Projets Actifs
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
@@ -172,9 +168,9 @@ export default async function ProjectsPage() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+            <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
               <div className="text-3xl mb-4">✅</div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 font-subtitle">
                 {completedProjects.length} Projets Terminés
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
@@ -182,9 +178,9 @@ export default async function ProjectsPage() {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+            <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
               <div className="text-3xl mb-4">⏳</div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 font-subtitle">
                 {upcomingProjects.length} Projets À Venir
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
@@ -195,7 +191,7 @@ export default async function ProjectsPage() {
 
           {activeProjects.length > 0 && (
             <div className="mb-12">
-              <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
+              <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center font-subtitle">
                 Projets En Cours
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -208,7 +204,7 @@ export default async function ProjectsPage() {
 
           {upcomingProjects.length > 0 && (
             <div className="mb-12">
-              <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
+              <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center font-subtitle">
                 Projets À Venir
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -221,7 +217,7 @@ export default async function ProjectsPage() {
 
           {completedProjects.length > 0 && (
             <div className="mb-12">
-              <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
+              <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center font-subtitle">
                 Projets Terminés
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -232,8 +228,8 @@ export default async function ProjectsPage() {
             </div>
           )}
 
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+          <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-subtitle">
               Proposer un Projet
             </h3>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
@@ -249,12 +245,6 @@ export default async function ProjectsPage() {
           </div>
         </div>
       </main>
-
-      <footer className="bg-gray-900 text-white py-8 mt-16">
-        <div className="container mx-auto px-6 text-center">
-          <p>&copy; 2024 Clichymouv92. Tous droits réservés.</p>
-        </div>
-      </footer>
     </div>
   );
 }

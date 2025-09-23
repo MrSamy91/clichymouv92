@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Caveat, Lora, Merriweather } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
+import NavbarVertical from "@/components/navbar-vertical";
+import Footer from "@/components/footer";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +15,48 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Polices personnalisées avec Google Fonts
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+});
+
+const lora = Lora({
+  variable: "--font-lora",
+  subsets: ["latin"],
+});
+
+const merriweather = Merriweather({
+  weight: ["300", "400", "700"],
+  variable: "--font-merriweather",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Clichymouv92 - Association de mouvement et bien-être",
+  title: "ClichyMouv - Association de mouvement et bien-être",
   description: "Association de mouvement et de bien-être à Clichy-la-Garenne. Activités sportives et de loisirs pour tous les âges.",
+  openGraph: {
+    title: "ClichyMouv - Association de mouvement et bien-être",
+    description: "Association de mouvement et de bien-être à Clichy-la-Garenne. Activités sportives et de loisirs pour tous les âges.",
+    url: "https://clichymouv.fr",
+    siteName: "ClichyMouv",
+    images: [
+      {
+        url: "/logo-clichy-mouv2.webp",
+        width: 1200,
+        height: 630,
+        alt: "Logo ClichyMouv - Association de mouvement et bien-être à Clichy-la-Garenne",
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ClichyMouv - Association de mouvement et bien-être",
+    description: "Association de mouvement et de bien-être à Clichy-la-Garenne. Activités sportives et de loisirs pour tous les âges.",
+    images: ["/logo-clichy-mouv2.webp"],
+  },
 };
 
 export default function RootLayout({
@@ -26,11 +67,14 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} ${lora.variable} ${merriweather.variable} antialiased`}
       >
-        <div className="min-h-screen">
-          <Navbar />
-          {children}
+        <div className="min-h-screen flex flex-col">
+          <NavbarVertical />        
+          <main className="md:ml-20 pt-20 md:pt-0 flex-1">
+            {children}
+          </main>
+          <Footer />
         </div>
       </body>
     </html>

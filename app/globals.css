@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
+/* Polices Google Fonts via next/font - pas besoin de @font-face */
+
 :root {
-  /* Palette de couleurs Clichymouv92 */
+  /* Palette de couleurs ClichyMouv */
   --black: #000000;
   --white: #ffffff;
   --light-gray: #f8f7f7;
@@ -70,53 +72,71 @@
   
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Polices personnalisées Google Fonts */
+  --font-title: var(--font-caveat), cursive, var(--font-geist-sans);
+  --font-subtitle: var(--font-lora), serif, var(--font-geist-sans);
+  --font-body: var(--font-merriweather), serif, var(--font-geist-sans);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--black);
     --foreground: var(--white);
-    --muted: #1a1a1a;
+    --muted: #a70d0de9;
   }
 }
 
 body {
   background: linear-gradient(135deg, 
-    var(--pink) 0%, 
-    var(--purple-dark) 15%, 
-    var(--purple) 30%, 
-    var(--blue-dark) 45%, 
-    var(--blue-medium) 60%, 
-    var(--blue-light) 75%, 
-    var(--cyan) 100%
+    var(--cyan) 0%, 
+    var(--blue-light) 25%, 
+    var(--blue-medium) 40%, 
+    var(--blue-dark) 55%, 
+    var(--purple) 70%, 
+    var(--purple-dark) 85%, 
+    var(--pink) 100%
   );
   background-attachment: fixed;
   min-height: 100vh;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
 }
 
 /* Gradient personnalisé pour les conteneurs */
 .gradient-bg {
   background: linear-gradient(135deg, 
-    var(--pink) 0%, 
-    var(--purple-dark) 15%, 
-    var(--purple) 30%, 
-    var(--blue-dark) 45%, 
-    var(--blue-medium) 60%, 
-    var(--blue-light) 75%, 
-    var(--cyan) 100%
+    var(--cyan) 0%, 
+    var(--blue-light) 25%, 
+    var(--blue-medium) 40%, 
+    var(--blue-dark) 55%, 
+    var(--purple) 70%, 
+    var(--purple-dark) 85%, 
+    var(--pink) 100%
   );
 }
 
 .gradient-bg-subtle {
   background: linear-gradient(135deg, 
-    rgba(226, 34, 99, 0.1) 0%, 
-    rgba(129, 65, 142, 0.1) 15%, 
-    rgba(90, 69, 147, 0.1) 30%, 
-    rgba(64, 86, 157, 0.1) 45%, 
-    rgba(88, 109, 177, 0.1) 60%, 
-    rgba(64, 162, 217, 0.1) 75%, 
-    rgba(41, 182, 208, 0.1) 100%
+    rgba(41, 182, 208, 0.1) 0%, 
+    rgba(64, 162, 217, 0.1) 25%, 
+    rgba(88, 109, 177, 0.1) 40%, 
+    rgba(64, 86, 157, 0.1) 55%, 
+    rgba(90, 69, 147, 0.1) 70%, 
+    rgba(129, 65, 142, 0.1) 85%, 
+    rgba(226, 34, 99, 0.1) 100%
   );
+}
+
+/* Classes utilitaires pour les polices personnalisées */
+.font-title {
+  font-family: var(--font-title);
+}
+
+.font-subtitle {
+  font-family: var(--font-subtitle);
+}
+
+.font-body {
+  font-family: var(--font-body);
 }
