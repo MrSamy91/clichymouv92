@@ -4,16 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 15 website for ClichyMouv, an association for movement and wellness in Clichy-la-Garenne. The site is built with React 19, TypeScript, and Tailwind CSS 4.
+This is a Next.js 15 website for ClichyMouv, an association for movement and wellness in Clichy-la-Garenne. The site is built with React 19, TypeScript, and Tailwind CSS 4 with Google Analytics integration.
 
 ## Common Commands
 
 **Development:**
 ```bash
-pnpm run dev          # Start development server with Turbopack
-pnpm run build        # Build for production with Turbopack
-pnpm run start        # Start production server
-pnpm run lint         # Run ESLint
+pnpm dev          # Start development server with Turbopack
+pnpm build        # Build for production with Turbopack
+pnpm start        # Start production server
+pnpm lint         # Run ESLint
 ```
 
 **Package Manager:** This project uses pnpm (evidenced by pnpm-lock.yaml)
@@ -23,58 +23,78 @@ pnpm run lint         # Run ESLint
 **App Router Structure:**
 - Uses Next.js 15 App Router (`app/` directory)
 - Each page is a `page.tsx` file in its directory
-- Root layout in `app/layout.tsx` includes global navbar
+- Root layout in `app/layout.tsx` includes vertical navigation and footer
 - French language site (`lang="fr"` in layout)
+- SEO-optimized with comprehensive metadata and OpenGraph tags
 
 **Key Pages:**
-- `/` - Homepage with hero section
-- `/about` - About page with 4 sections: Notre But, Nos Moyens, Notre Réseau, Nos Valeurs
+- `/` - Homepage with hero section and partner carousel
+- `/about` - About page 
 - `/partners` - Partners page displaying local business partners
-- `/adherants` - Members page
-- `/contact` - Contact page
+- `/adherants` - Members page with search functionality
+- `/bureau` - Board members page
+- `/contact` - Contact page with contact form
 - `/projets` - Projects page
 
-**Components Architecture:**
-- `components/navbar.tsx` - Main navigation with mobile hamburger menu, uses logo image
-- `components/navbar-vertical.tsx` - Vertical navigation component
-- `components/hero-section.tsx` - Hero section for homepage
+**Component Architecture:**
+- `components/navbar-vertical.tsx` - Main vertical sidebar navigation with desktop/mobile responsive design
+- `components/hero-section.tsx` - Reusable hero section component
 - `components/footer.tsx` - Site footer component
-- `components/logo-partner-list.tsx` - Partner logos display component
 - `components/caroussel-partner.tsx` - Partner carousel component
-- `components/adherant-list.tsx` - Members/adherents list component
+- `components/adherant-list.tsx` - Members list with search functionality
+- `components/bureau-list.tsx` - Board members list
+- `components/card-display.tsx` - Reusable card display component
+- `components/search-bar.tsx` - Search functionality component
 
-**Data Patterns:**
-- Partners data is defined directly in `app/partners/page.tsx` as async function
-- Partner interface includes: id, name, company, type, description, website, logo, address
-- Partner images stored in `/public/images/personnes/` directory
-- Logo image: `/public/logo-clichy-mouv.PNG`
+**Data Management:**
+- Centralized data in `lib/` directory:
+  - `lib/types.ts` - Common TypeScript interfaces (CardItem interface)
+  - `lib/list-of-adherants.ts` - Comprehensive adherents data (130+ members)
+  - `lib/list-of-bureau.ts` - Board members data
+- Partner data defined inline in homepage as async function
+- All data includes: id, name, company, description, website, phone, logo, address
+
+**Font System:**
+- Multiple Google Fonts loaded: Geist (Sans/Mono), Caveat, Lora, Merriweather
+- CSS custom properties for font families
+- Weights: 300, 400, 700 for Merriweather
 
 **Styling:**
-- Tailwind CSS 4 for styling
-- Dark mode support throughout components
-- Responsive design patterns (md:, lg: breakpoints)
-- Geist fonts (Sans and Mono) loaded via next/font/google
-- React Icons (react-icons) for iconography
+- Tailwind CSS 4 with PostCSS configuration
+- Dark mode support with backdrop-blur effects
+- Responsive design: desktop sidebar (`md:ml-20`), mobile hamburger menu
+- Custom color scheme with indigo-800 accents and white/glass effects
+- React Icons (react-icons) using Heroicons v2
 
-**Image Handling:**
-- Uses `next/image` for optimized image loading
-- Partner photos stored in `/public/images/personnes/`
-- Logo and other assets in `/public/`
+**Image Assets:**
+- Logo files: `/public/logo-samy.svg` (main), `/public/logo-clichy-mouv.PNG`, `/public/logo-clichy-mouv2.webp`
+- Partner images: `/public/images/partners/` (SVG/WebP)
+- Bureau member photos: `/public/images/bureau/` 
+- Enterprise photos: `/public/images/photos_entreprises/`
+- Generic person avatars: `/public/images/personnes/`
 
 ## Key Conventions
 
+**Navigation Pattern:**
+- Vertical sidebar on desktop (hidden on mobile with `hidden md:flex`)
+- Mobile overlay menu with backdrop blur
+- Active state management using `usePathname()`
+- Hamburger animation with transform transitions
+
+**Data Patterns:**
+- Common `CardItem` interface for all member/business data
+- French addresses format: "Street, Postal Code City" 
+- Website links with `target="_blank" rel="noopener noreferrer"`
+- Phone numbers in French format (01 XX XX XX XX)
+- Default logo placeholder: `/7.svg`
+
 **Component Patterns:**
-- TypeScript interfaces defined inline with components
-- Dark mode classes: `dark:bg-gray-800`, `dark:text-white`
-- Responsive grids: `grid md:grid-cols-2 lg:grid-cols-3`
-- Client components use `'use client'` directive when needed
+- Client components with `'use client'` for interactivity
+- TypeScript interfaces defined in `lib/types.ts`
+- Async data functions for server components
+- Responsive grids with `md:grid-cols-2 lg:grid-cols-3`
 
-**Navigation:**
-- Navbar uses `usePathname()` for active state management
-- Mobile menu with backdrop and hamburger animation
-- Logo links to homepage with `onClick={closeMenu}`
-
-**Content Structure:**
-- French content throughout
-- Address format: "Street, Postal Code City"
-- Website links open in new tabs with `target="_blank" rel="noopener noreferrer"`
+**Environment:**
+- Google Analytics with `NEXT_PUBLIC_GA_ID` env variable
+- Development mode debugging enabled
+- ESLint with Next.js core web vitals and TypeScript rules
