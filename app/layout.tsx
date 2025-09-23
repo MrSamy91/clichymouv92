@@ -35,6 +35,11 @@ const merriweather = Merriweather({
 export const metadata: Metadata = {
   title: "ClichyMouv - Association de mouvement et bien-être",
   description: "Association de mouvement et de bien-être à Clichy-la-Garenne. Activités sportives et de loisirs pour tous les âges.",
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
   openGraph: {
     title: "ClichyMouv - Association de mouvement et bien-être",
     description: "Association de mouvement et de bien-être à Clichy-la-Garenne. Activités sportives et de loisirs pour tous les âges.",
