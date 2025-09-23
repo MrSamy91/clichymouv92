@@ -27,9 +27,9 @@ export default function NavbarVertical() {
     { href: '/adherants', label: 'Adhérents', icon: HiUsers },
     { href: '/projets', label: 'Projets', icon: HiClipboardDocumentList },
     { href: '/contact', label: 'Contact', icon: HiPhone },
+    { href: '/about', label: 'À propos', icon: HiInformationCircle },
   ];
-  // Future link:
-  //{ href: '/about', label: 'À propos', icon: HiInformationCircle },
+  
 
   return (
     <>

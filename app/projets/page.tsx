@@ -2,147 +2,146 @@ import { Metadata } from 'next';
 import HeroSection from '@/components/hero-section';
 
 export const metadata: Metadata = {
-  title: 'Projets - ClichyMouv',
-  description: 'Découvrez les projets et initiatives de l\'association ClichyMouv',
+  title: 'Événements & Projets - ClichyMouv',
+  description: 'Découvrez les événements et initiatives du réseau ClichyMouv : Journées commerçants, animations thématiques, Festival du Commerce Local et moments de partage.',
 };
 
-interface Project {
+interface Event {
   id: number;
   title: string;
-  status: 'En cours' | 'Terminé' | 'À venir';
+  status: 'Récurrent' | 'Annuel' | 'Saisonnier' | 'Mensuel';
   category: string;
   description: string;
   longDescription: string;
-  startDate: string;
-  endDate?: string;
-  participants?: number;
+  frequency: string;
+  participants?: string;
   image: string;
 }
 
-async function getProjects(): Promise<Project[]> {
+async function getEvents(): Promise<Event[]> {
   return [
     {
       id: 1,
-      title: "Clichy en Mouvement",
-      status: "En cours",
-      category: "Sport communautaire",
-      description: "Programme d'activités sportives gratuites dans les parcs de la ville.",
-      longDescription: "Un programme ambitieux qui propose des cours de fitness, yoga et danse en plein air tous les week-ends. Accessible à tous les niveaux, ce projet vise à démocratiser l'accès au sport dans notre commune.",
-      startDate: "2024-03-01",
-      participants: 150,
-      image: "🏃‍♀️"
+      title: "Les Journées Clichy Mouv'",
+      status: "Récurrent",
+      category: "Événements Commerçants",
+      description: "Promotions exclusives, démonstrations, ateliers, dégustations et rencontres avec les commerçants.",
+      longDescription: "Événements récurrents organisés pour mettre en avant nos commerçants adhérents. Ces journées permettent aux habitants de découvrir les produits et services locaux à travers des promotions spéciales, des démonstrations en direct et des moments de convivialité.",
+      frequency: "Plusieurs fois par an",
+      participants: "150+ commerçants participants",
+      image: "🛍️"
     },
     {
       id: 2,
-      title: "Seniors Actifs",
-      status: "En cours",
-      category: "Bien-être",
-      description: "Activités adaptées pour maintenir la forme et le lien social chez les seniors.",
-      longDescription: "Programme spécialement conçu pour les personnes de plus de 60 ans, incluant gym douce, marche nordique et ateliers mémoire. L'objectif est de favoriser le vieillissement actif et de lutter contre l'isolement.",
-      startDate: "2024-01-15",
-      participants: 80,
-      image: "👥"
+      title: "Animations Thématiques",
+      status: "Saisonnier",
+      category: "Événements Festifs",
+      description: "Marchés nocturnes, journées Noël, Halloween, Téléthon, Loto enfants avec lots commerçants.",
+      longDescription: "Animations organisées tout au long de l'année selon les saisons et événements spéciaux. Marchés nocturnes l'été, animations de Noël et Halloween, participation au Téléthon, organisation de lotos pour les enfants avec de nombreux lots offerts par nos commerçants partenaires.",
+      frequency: "Selon les saisons",
+      participants: "Toute la famille",
+      image: "🎄"
     },
     {
       id: 3,
-      title: "Sport & Études",
-      status: "À venir",
-      category: "Jeunesse",
-      description: "Partenariat avec les écoles locales pour intégrer plus de sport dans l'éducation.",
-      longDescription: "Collaboration avec les établissements scolaires de Clichy pour proposer des activités périscolaires sportives et éducatives. Comprend des initiations à de nouveaux sports et des programmes de sensibilisation à la nutrition.",
-      startDate: "2024-09-01",
-      image: "🎓"
+      title: "Festival du Commerce Local",
+      status: "Annuel",
+      category: "Grand Événement",
+      description: "LE grand rendez-vous annuel avec stands extérieur, concerts, animations enfants et food trucks.",
+      longDescription: "L'événement phare de ClichyMouv ! Un festival d'envergure avec des stands en extérieur permettant aux commerçants de présenter leurs produits et services, des concerts, des animations spécialement conçues pour les enfants, des food trucks et une ambiance festive pour toute la famille.",
+      frequency: "Une fois par an",
+      participants: "Toute la ville de Clichy",
+      image: "🎪"
     },
     {
       id: 4,
-      title: "Défi Solidaire",
-      status: "Terminé",
-      category: "Événement",
-      description: "Course caritative pour soutenir les associations locales.",
-      longDescription: "Événement caritatif organisé en partenariat avec d'autres associations de la ville. Plus de 300 participants ont couru pour récolter des fonds destinés aux actions sociales locales.",
-      startDate: "2023-10-15",
-      endDate: "2023-10-15",
-      participants: 320,
-      image: "🏃‍♂️"
+      title: "Moments de Rencontre & Partage",
+      status: "Mensuel",
+      category: "Networking & Solidarité",
+      description: "Apéro-réunions collaboratives, événements commerçants-clients, actions solidaires.",
+      longDescription: "Événements dédiés au networking et à la cohésion du réseau. Apéros-réunions dans une ambiance collaborative et conviviale, événements mixtes commerçants-clients pour créer du lien, et actions solidaires menées en partenariat avec les associations locales.",
+      frequency: "Mensuellement",
+      participants: "Réseau ClichyMouv & partenaires",
+      image: "🤝"
     },
     {
       id: 5,
-      title: "Bien-être au Travail",
-      status: "En cours",
-      category: "Entreprise",
-      description: "Sessions de relaxation et sport pour les entreprises locales.",
-      longDescription: "Programme B2B proposant des interventions dans les entreprises de Clichy. Pause détente, cours de yoga et sensibilisation aux troubles musculo-squelettiques pour améliorer le bien-être au travail.",
-      startDate: "2024-02-01",
-      participants: 200,
-      image: "💼"
+      title: "Développement du Réseau",
+      status: "Récurrent",
+      category: "Croissance & Accompagnement",
+      description: "Accompagnement des nouveaux adhérents et actions pour atteindre 200+ membres.",
+      longDescription: "Actions continues pour développer et renforcer notre réseau de commerçants et entrepreneurs. Avec déjà plus de 150 membres, notre objectif est de créer une communauté encore plus large et solidaire, en accompagnant chaque nouvel adhérent dans son intégration.",
+      frequency: "En continu",
+      participants: "150+ commerçants déjà unis",
+      image: "📈"
     },
     {
       id: 6,
-      title: "Festival du Mouvement",
-      status: "À venir",
-      category: "Événement",
-      description: "Grand festival annuel célébrant le sport et le bien-être.",
-      longDescription: "Événement phare de l'association prévu pour l'été 2024. Trois jours de démonstrations, ateliers, conférences et spectacles autour du thème du mouvement et de la santé. Ouvert à tous gratuitement.",
-      startDate: "2024-07-15",
-      endDate: "2024-07-17",
-      image: "🎪"
+      title: "Actions de Communication",
+      status: "Récurrent",
+      category: "Visibilité & Promotion",
+      description: "Mise en avant sur réseaux sociaux, site web et campagnes promotionnelles.",
+      longDescription: "Programme de communication pour valoriser nos adhérents : mise en avant sur nos réseaux sociaux, présentation sur notre site web, campagnes promotionnelles ciblées. L'objectif est d'offrir une visibilité accrue à chaque commerçant du réseau.",
+      frequency: "Quotidiennement",
+      participants: "Tous les adhérents",
+      image: "📱"
     }
   ];
 }
 
 export default async function ProjectsPage() {
-  const projects = await getProjects();
+  const events = await getEvents();
 
-  const activeProjects = projects.filter(p => p.status === 'En cours');
-  const completedProjects = projects.filter(p => p.status === 'Terminé');
-  const upcomingProjects = projects.filter(p => p.status === 'À venir');
+  const recurringEvents = events.filter(e => e.status === 'Récurrent');
+  const annualEvents = events.filter(e => e.status === 'Annuel');
+  const seasonalEvents = events.filter(e => e.status === 'Saisonnier');
+  const monthlyEvents = events.filter(e => e.status === 'Mensuel');
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'En cours':
+      case 'Récurrent':
         return '!bg-green-100 dark:bg-green-900 !text-green-800 dark:text-green-200';
-      case 'Terminé':
-        return '!bg-gray-100 dark:bg-gray-700 !text-gray-800 dark:text-gray-200';
-      case 'À venir':
+      case 'Annuel':
+        return '!bg-purple-100 dark:bg-purple-900 !text-purple-800 dark:text-purple-200';
+      case 'Saisonnier':
+        return '!bg-orange-100 dark:bg-orange-900 !text-orange-800 dark:text-orange-200';
+      case 'Mensuel':
         return '!bg-blue-100 dark:bg-blue-900 !text-blue-800 dark:text-blue-200';
       default:
         return '!bg-gray-100 dark:bg-gray-700 !text-gray-800 dark:text-gray-200';
     }
   };
 
-  const ProjectCard = ({ project }: { project: Project }) => (
+  const EventCard = ({ event }: { event: Event }) => (
     <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
       <div className="flex items-start justify-between mb-4">
-        <div className="text-4xl">{project.image}</div>
-        <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getStatusColor(project.status)}`}>
-          {project.status}
+        <div className="text-4xl">{event.image}</div>
+        <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getStatusColor(event.status)}`}>
+          {event.status}
         </span>
       </div>
       
       <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 font-subtitle">
-        {project.title}
+        {event.title}
       </h3>
       
       <p className="text-indigo-600 dark:text-indigo-400 text-sm font-medium mb-3">
-        {project.category}
+        {event.category}
       </p>
       
       <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-        {project.description}
+        {event.description}
       </p>
       
       <div className="space-y-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
-        <p>📅 Début: {new Date(project.startDate).toLocaleDateString('fr-FR')}</p>
-        {project.endDate && (
-          <p>🏁 Fin: {new Date(project.endDate).toLocaleDateString('fr-FR')}</p>
-        )}
-        {project.participants && (
-          <p>👥 Participants: {project.participants}</p>
+        <p>⏰ Fréquence: {event.frequency}</p>
+        {event.participants && (
+          <p>👥 Participants: {event.participants}</p>
         )}
       </div>
       
       <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-        {project.longDescription}
+        {event.longDescription}
       </p>
     </div>
   );
@@ -150,98 +149,135 @@ export default async function ProjectsPage() {
   return (
     <div>
       <HeroSection 
-        description="Découvrez les initiatives et projets que nous menons pour promouvoir le mouvement et le bien-être dans notre communauté."
+        description="Découvrez les événements et initiatives du réseau ClichyMouv pour dynamiser le commerce local et créer du lien entre commerçants et habitants."
         showLogo={true}
       />
       
       <main className="container mx-auto px-6 py-12">
         <div className="max-w-6xl mx-auto">
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          {/* Section Statistiques du Réseau */}
+          <div className="grid lg:grid-cols-4 gap-6 mb-12">
             <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
-              <div className="text-3xl mb-4">🚀</div>
+              <div className="text-3xl mb-4">🏪</div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 font-subtitle">
-                {activeProjects.length} Projets Actifs
+                150+
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                En cours de réalisation
+                Commerçants & Entrepreneurs unis
               </p>
             </div>
 
             <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
-              <div className="text-3xl mb-4">✅</div>
+              <div className="text-3xl mb-4">📅</div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 font-subtitle">
-                {completedProjects.length} Projets Terminés
+                {recurringEvents.length} Événements
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Réalisés avec succès
+                Récurrents toute l'année
               </p>
             </div>
 
             <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
-              <div className="text-3xl mb-4">⏳</div>
+              <div className="text-3xl mb-4">🎪</div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 font-subtitle">
-                {upcomingProjects.length} Projets À Venir
+                {annualEvents.length} Festival
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                En préparation
+                Grand rendez-vous annuel
+              </p>
+            </div>
+
+            <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-6 text-center">
+              <div className="text-3xl mb-4">🤝</div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 font-subtitle">
+                4 Missions
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Réseau • Événements • Promotion • Soutien
               </p>
             </div>
           </div>
 
-          {activeProjects.length > 0 && (
+          {/* Événements Récurrents */}
+          {recurringEvents.length > 0 && (
             <div className="mb-12">
               <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center font-subtitle">
-                Projets En Cours
+                Événements Récurrents
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {activeProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                {recurringEvents.map((event) => (
+                  <EventCard key={event.id} event={event} />
                 ))}
               </div>
             </div>
           )}
 
-          {upcomingProjects.length > 0 && (
+          {/* Festival Annuel */}
+          {annualEvents.length > 0 && (
             <div className="mb-12">
               <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center font-subtitle">
-                Projets À Venir
+                Grand Événement Annuel
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {upcomingProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                {annualEvents.map((event) => (
+                  <EventCard key={event.id} event={event} />
                 ))}
               </div>
             </div>
           )}
 
-          {completedProjects.length > 0 && (
+          {/* Animations Saisonnières */}
+          {seasonalEvents.length > 0 && (
             <div className="mb-12">
               <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center font-subtitle">
-                Projets Terminés
+                Animations Saisonnières
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {completedProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                {seasonalEvents.map((event) => (
+                  <EventCard key={event.id} event={event} />
                 ))}
               </div>
             </div>
           )}
 
-          <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 font-subtitle">
-              Proposer un Projet
+          {/* Rencontres Mensuelles */}
+          {monthlyEvents.length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center font-subtitle">
+                Rencontres & Networking
+              </h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {monthlyEvents.map((event) => (
+                  <EventCard key={event.id} event={event} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Section d'engagement - Rejoindre le réseau */}
+          <div className="!bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg shadow-lg p-8 text-center text-white">
+            <h3 className="text-3xl font-semibold mb-4 font-subtitle">
+              Rejoignez le Mouvement !
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-              Vous avez une idée de projet en lien avec nos activités ? 
-              N&apos;hésitez pas à nous la soumettre !
+            <p className="text-lg leading-relaxed mb-6 opacity-90">
+              Plus de 150 commerçants et entrepreneurs nous font déjà confiance.<br/>
+              <strong>4 raisons de nous rejoindre :</strong> Visibilité accrue • Participation aux événements • Soutien quotidien • Réseau solidaire
             </p>
-            <a 
-              href="/contact" 
-              className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
-            >
-              Nous contacter
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="/contact" 
+                className="inline-block bg-white text-indigo-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors"
+              >
+                Nous rejoindre
+              </a>
+              <a 
+                href="/adherants" 
+                className="inline-block border-2 border-white text-white hover:bg-white hover:text-indigo-600 font-semibold px-8 py-3 rounded-lg transition-colors"
+              >
+                Voir nos adhérents
+              </a>
+            </div>
           </div>
         </div>
       </main>
