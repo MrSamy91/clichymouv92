@@ -69,6 +69,7 @@ export default async function PartnersPage() {
   return (
     <div>
       <HeroSection 
+        title="Ils nous font confiance"
         description="ClichyMouv travaille avec des partenaires de confiance pour offrir les meilleures activités et services à notre communauté."
         showLogo={true}
       />
@@ -77,9 +78,6 @@ export default async function PartnersPage() {
         <div className="max-w-6xl mx-auto">
 
           <div id="nos-partenaires" className="mb-12">
-            <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-8 text-center font-subtitle">
-              Ils nous font confiance
-            </h3>
             <LogoPartnerList partners={partners} />
           </div>
 

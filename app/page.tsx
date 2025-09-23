@@ -41,39 +41,16 @@ export default async function HomePage() {
   const partnersData = await getPartnersData();
   return (
     <div>
-      <HeroSection />
+      <HeroSection
+      title='Entreprises de nos Adhérents'
+      description="Découvrez les entreprises créées et dirigées par nos membres. 
+              Une communauté d&apos;entrepreneurs engagés dans le mouvement et le bien-être."
+ />
 
       <main className="container mx-auto px-6 py-12">
         <div className="text-center max-w-4xl mx-auto">
 
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="!bg-white/20 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 font-subtitle">
-                Activités Sportives
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Découvrez nos programmes d&apos;activités physiques adaptés à tous les niveaux.
-              </p>
-            </div>
-
-            <div className="!bg-white/20 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 font-subtitle">
-                Bien-être
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Rejoignez nos sessions de relaxation et de développement personnel.
-              </p>
-            </div>
-
-            <div className="!bg-white/20 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 font-subtitle">
-                Communauté
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Faites partie d&apos;une communauté dynamique et bienveillante.
-              </p>
-            </div>
-          </div>
+          
 
           <div className="mt-12">
             <a 
@@ -87,16 +64,6 @@ export default async function HomePage() {
 
         {/* Section des entreprises partenaires */}
         <section className="mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4 font-title">
-              Entreprises de nos Adhérents
-            </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Découvrez les entreprises créées et dirigées par nos membres. 
-              Une communauté d&apos;entrepreneurs engagés dans le mouvement et le bien-être.
-            </p>
-          </div>
-          
           <CarousselPartner partners={partnersData} />
         </section>
       </main>

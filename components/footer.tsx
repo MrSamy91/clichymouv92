@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="block mb-4">
               <Image
-                src="/logo-clichy-mouv2.webp"
+                src="/logo-samy.svg"
                 alt="ClichyMouv"
                 width={150}
                 height={60}

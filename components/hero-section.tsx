@@ -8,7 +8,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ 
   title, 
-  description = "Association des commercants de Clichy-la-Garenne. Nous proposons des activités sportives et de loisirs pour tous les âges.",
+  description,
   showLogo = true 
 }: HeroSectionProps) {
   return (

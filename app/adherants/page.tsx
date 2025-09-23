@@ -1,79 +1,89 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useState, useCallback, useMemo } from 'react';
 import AdherantList from '@/components/adherant-list';
 import HeroSection from '@/components/hero-section';
+import SearchBar from '@/components/search-bar';
+import { adherents, type Adherent } from '@/lib/list-of-adherants';
 
-export const metadata: Metadata = {
-  title: 'Adhérents - ClichyMouv',
-  description: 'Découvrez nos adhérents commerçants et entrepreneurs engagés dans notre démarche d\'entraide locale',
-};
+const ITEMS_PER_PAGE = 6;
 
-interface Adherent {
-  id: number;
-  name: string;
-  company: string;
-  description: string;
-  website?: string;
-  phone?: string;
-  logo: string;
-  address: string;
-}
-
-async function getAdherents(): Promise<Adherent[]> {
-  // Commerçants et entrepreneurs adhérents à notre démarche d'entraide
-  return [
-    {
-      id: 1,
-      name: "Café des Sports",
-      company: "Bar-Restaurant",
-      description: "Établissement convivial au cœur de Clichy, le Café des Sports propose une cuisine traditionnelle dans une ambiance chaleureuse. Partenaire de nos événements associatifs et lieu de rassemblement pour notre communauté.",
-      website: "https://cafe-des-sports-clichy.fr",
-      phone: "01 47 37 92 15",
-      logo: "/images/adherents/cafe-des-sports.png",
-      address: "15 Avenue Victor Hugo, 92110 Clichy-la-Garenne"
-    },
-    {
-      id: 2,
-      name: "Tech Solutions",
-      company: "Services informatiques",
-      description: "Entreprise locale spécialisée dans les solutions informatiques pour les PME. Tech Solutions accompagne ClichyMouv dans la digitalisation de ses activités et offre des formations numériques aux adhérents.",
-      website: "https://tech-solutions-clichy.fr",
-      phone: "01 47 37 92 28",
-      logo: "/images/adherents/tech-solutions.png",
-      address: "28 Rue de la République, 92110 Clichy-la-Garenne"
-    },
-    {
-      id: 3,
-      name: "Boulangerie Artisan",
-      company: "Boulangerie-Pâtisserie",
-      description: "Boulangerie familiale proposant des produits artisanaux de qualité. Engagée dans notre démarche d'entraide, elle fournit régulièrement nos événements et soutient les initiatives locales de bien-être.",
-      website: "",
-      phone: "01 47 37 92 05",
-      logo: "/images/adherents/boulangerie-artisan.png",
-      address: "5 Place de la Mairie, 92110 Clichy-la-Garenne"
-    }
-  ];
-}
-
-export default async function AdherantsPage() {
-  const adherents = await getAdherents();
+export default function AdherantsPage() {
+  const [filteredAdherents, setFilteredAdherents] = useState<Adherent[]>([]);
+  const [displayedCount, setDisplayedCount] = useState(ITEMS_PER_PAGE);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  
+  // Détermine les adhérents à afficher (filtrés ou tous)
+  const currentAdherents = filteredAdherents.length > 0 ? filteredAdherents : adherents;
+  
+  // Adhérents actuellement visibles
+  const visibleAdherents = useMemo(() => {
+    return currentAdherents.slice(0, displayedCount);
+  }, [currentAdherents, displayedCount]);
+  
+  // Y a-t-il plus d'éléments à charger ?
+  const hasMore = displayedCount < currentAdherents.length;
+  
+  // Fonction pour charger plus d'éléments
+  const loadMore = useCallback(async () => {
+    setIsLoadingMore(true);
+    
+    // Simule un délai de chargement pour l'UX
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    setDisplayedCount(prev => Math.min(prev + ITEMS_PER_PAGE, currentAdherents.length));
+    setIsLoadingMore(false);
+  }, [currentAdherents.length]);
+  
+  // Reset de la pagination quand les résultats filtrés changent
+  const handleFilteredResults = useCallback((filtered: Adherent[]) => {
+    setFilteredAdherents(filtered);
+    setDisplayedCount(ITEMS_PER_PAGE); // Reset à la première page
+  }, []);
 
   return (
     <div className="min-h-screen">
       <HeroSection 
-        description="Découvrez les commerçants et entrepreneurs locaux qui soutiennent notre démarche d'entraide et contribuent au dynamisme de Clichy-la-Garenne."
+      description="ClichyMouv rassemble des commerçants et entrepreneurs dynamiques unis par une vision commune : créer une économie locale solidaire basée sur l'entraide mutuelle. Ensemble, nous développons des synergies qui profitent à tous et renforcent le tissu économique local."
         showLogo={true}
       />
 
       <div className="container mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            ClichyMouv rassemble des commerçants et entrepreneurs dynamiques unis par une vision commune : 
-            créer une économie locale solidaire basée sur l&apos;entraide mutuelle. Ensemble, nous développons 
-            des synergies qui profitent à tous et renforcent le tissu économique local.
-          </p>
-        </div>
         
-        <AdherantList adherants={adherents} />
+        
+        <SearchBar 
+          adherents={adherents}
+          onFilteredResults={handleFilteredResults}
+          placeholder="Rechercher par nom d'entreprise ou de responsable..."
+        />
+        
+        <AdherantList 
+          adherants={visibleAdherents} 
+          isLoadingMore={isLoadingMore}
+          itemsPerPage={ITEMS_PER_PAGE}
+        />
+        
+        {hasMore && (
+          <div className="text-center mt-8">
+            <button
+              onClick={loadMore}
+              disabled={isLoadingMore}
+              className="bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center gap-2"
+            >
+              {isLoadingMore ? (
+                <>
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Chargement...
+                </>
+              ) : (
+                `Charger plus (${Math.min(ITEMS_PER_PAGE, currentAdherents.length - displayedCount)} de plus)`
+              )}
+            </button>
+          </div>
+        )}
         
         <div className="text-center mt-12">
           <div className="!bg-white/20 dark:bg-gray-800 rounded-lg shadow-lg p-8 max-w-2xl mx-auto">

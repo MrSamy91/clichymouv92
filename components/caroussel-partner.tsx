@@ -23,7 +23,7 @@ export default function CarousselPartner({ partners }: CarousselPartnerProps) {
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const changeSlide = useCallback((newIndex: number, direction: 'left' | 'right' = 'right') => {
+  const changeSlide = useCallback((newIndex: number) => {
     if (isTransitioning) return; // Empêche les transitions multiples
     
     setIsTransitioning(true);
@@ -45,7 +45,7 @@ export default function CarousselPartner({ partners }: CarousselPartnerProps) {
 
     const interval = setInterval(() => {
       const newIndex = currentIndex === partners.length - 1 ? 0 : currentIndex + 1;
-      changeSlide(newIndex, 'right');
+      changeSlide(newIndex);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -54,21 +54,20 @@ export default function CarousselPartner({ partners }: CarousselPartnerProps) {
   const goToPrevious = () => {
     setIsAutoPlaying(false);
     const newIndex = currentIndex === 0 ? partners.length - 1 : currentIndex - 1;
-    changeSlide(newIndex, 'left');
+    changeSlide(newIndex);
     setTimeout(() => setIsAutoPlaying(true), 3000); // Reprend l'auto-play après 3s
   };
 
   const goToNext = () => {
     setIsAutoPlaying(false);
     const newIndex = currentIndex === partners.length - 1 ? 0 : currentIndex + 1;
-    changeSlide(newIndex, 'right');
+    changeSlide(newIndex);
     setTimeout(() => setIsAutoPlaying(true), 3000); // Reprend l'auto-play après 3s
   };
 
   const goToSlide = (index: number) => {
     setIsAutoPlaying(false);
-    const direction = index > currentIndex ? 'right' : 'left';
-    changeSlide(index, direction);
+    changeSlide(index);
     setTimeout(() => setIsAutoPlaying(true), 3000); // Reprend l'auto-play après 3s
   };
 
