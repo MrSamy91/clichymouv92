@@ -37,7 +37,7 @@ async function getEvents(): Promise<Event[]> {
       status: "Saisonnier",
       category: "Événements Festifs",
       description: "Marchés nocturnes, journées Noël, Halloween, Téléthon, Loto enfants avec lots commerçants.",
-      longDescription: "Animations organisées tout au long de l'année selon les saisons et événements spéciaux. Marchés nocturnes l'été, animations de Noël et Halloween, participation au Téléthon, organisation de lotos pour les enfants avec de nombreux lots offerts par nos commerçants partenaires.",
+      longDescription: "Animations organisées tout au long de l&apos;année selon les saisons et événements spéciaux. Marchés nocturnes l&apos;été, animations de Noël et Halloween, participation au Téléthon, organisation de lotos pour les enfants avec de nombreux lots offerts par nos commerçants partenaires.",
       frequency: "Selon les saisons",
       participants: "Toute la famille",
       image: "🎄"
@@ -48,7 +48,7 @@ async function getEvents(): Promise<Event[]> {
       status: "Annuel",
       category: "Grand Événement",
       description: "LE grand rendez-vous annuel avec stands extérieur, concerts, animations enfants et food trucks.",
-      longDescription: "L'événement phare de ClichyMouv ! Un festival d'envergure avec des stands en extérieur permettant aux commerçants de présenter leurs produits et services, des concerts, des animations spécialement conçues pour les enfants, des food trucks et une ambiance festive pour toute la famille.",
+      longDescription: "L&apos;événement phare de ClichyMouv ! Un festival d&apos;envergure avec des stands en extérieur permettant aux commerçants de présenter leurs produits et services, des concerts, des animations spécialement conçues pour les enfants, des food trucks et une ambiance festive pour toute la famille.",
       frequency: "Une fois par an",
       participants: "Toute la ville de Clichy",
       image: "🎪"
@@ -174,7 +174,7 @@ export default async function ProjectsPage() {
                 {recurringEvents.length} Événements
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Récurrents toute l'année
+                Récurrents toute l&apos;année
               </p>
             </div>
 

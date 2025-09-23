@@ -25,7 +25,7 @@ export default async function AboutPage() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                  <strong>Clichy Mouv' est le réseau professionnel qui fait bouger sa ville.</strong> Commerçants, 
+                  <strong>Clichy Mouv&apos; est le réseau professionnel qui fait bouger sa ville.</strong> Commerçants, 
                   entrepreneurs, artisans, professions libérales : ensemble, nous rendons 
                   Clichy plus dynamique, attractive et conviviale.
                 </p>
@@ -160,7 +160,7 @@ export default async function AboutPage() {
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                   Nos événements attirent, rassemblent et font rayonner le commerce local ! 
-                  Des Journées ClichyMouv au Festival du Commerce, nous créons l'animation.
+                  Des Journées ClichyMouv au Festival du Commerce, nous créons l&apos;animation.
                 </p>
               </div>
               <div className="text-center p-6 border !border-green-200/50 dark:border-green-700 rounded-lg bg-green-50/50 dark:bg-green-900/20">
