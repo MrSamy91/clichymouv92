@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Caveat, Lora, Merriweather } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 import NavbarVertical from "@/components/navbar-vertical";
 import Footer from "@/components/footer";
@@ -75,6 +76,10 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <GoogleAnalytics 
+          gaId={process.env.NEXT_PUBLIC_GA_ID ?? ''} 
+          debugMode={process.env.NODE_ENV === 'development'}
+        />
       </body>
     </html>
   );
