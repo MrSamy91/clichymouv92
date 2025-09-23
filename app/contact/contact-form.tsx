@@ -42,7 +42,7 @@ ${formData.name}`;
     const { subjectText, body } = getEmailData();
     
     // URL Gmail pré-remplie
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=contact@ClichyMouv.fr&su=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(body)}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=contact@clichymouv92.fr&su=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(body)}`;
     
     // Ouvrir Gmail dans un nouvel onglet
     window.open(gmailUrl, '_blank');

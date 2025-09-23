@@ -43,7 +43,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 text-gray-300">
                 <HiEnvelope className="text-lg" />
-                <span className="text-sm">contact@ClichyMouv.fr</span>
+                <span className="text-sm">contact@clichymouv92.fr</span>
               </div>
             </div>
           </div>

@@ -57,7 +57,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white font-subtitle">Email</h4>
                     <p className="text-gray-600 dark:text-gray-300">
-                      contact@ClichyMouv.fr
+                      contact@clichymouv92.fr
                     </p>
                   </div>
                 </div>

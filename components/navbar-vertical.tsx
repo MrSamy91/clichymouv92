@@ -27,8 +27,9 @@ export default function NavbarVertical() {
     { href: '/adherants', label: 'Adhérents', icon: HiUsers },
     { href: '/projets', label: 'Projets', icon: HiClipboardDocumentList },
     { href: '/contact', label: 'Contact', icon: HiPhone },
-    { href: '/about', label: 'À propos', icon: HiInformationCircle }
   ];
+  // Future link:
+  //{ href: '/about', label: 'À propos', icon: HiInformationCircle },
 
   return (
     <>
@@ -121,7 +122,7 @@ export default function NavbarVertical() {
           isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-6 pt-20">
+        <div className="flex flex-col items-center justify-center h-full space-y-4 pt-20">
           {navLinks.map((link) => {
             const IconComponent = link.icon;
             return (
@@ -129,7 +130,7 @@ export default function NavbarVertical() {
                 key={link.href}
                 href={link.href}
                 onClick={closeMenu}
-                className={`text-4xl transition-colors flex flex-col items-center gap-3 ${
+                className={`text-2xl transition-colors flex flex-col items-center gap-2 ${
                   isActive(link.href)
                     ? 'text-white font-semibold'
                     : 'text-white/80 hover:text-white'
