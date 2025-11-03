@@ -1,12 +1,14 @@
 import { MetadataRoute } from 'next'
+import { adherents } from '@/lib/list-of-adherants'
+import { bureauMembers } from '@/lib/list-of-bureau'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://clichymouv.fr' 
+  const baseUrl = process.env.NODE_ENV === 'production'
+    ? 'https://clichymouv.fr'
     : 'http://localhost:3000'
 
-  // Pages statiques actuelles de ClichyMouv
-  return [
+  // Pages statiques principales
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -38,7 +40,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}partenaires`,
+      url: `${baseUrl}/partenaires`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
@@ -50,6 +52,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     }
   ]
+
+  // Pages individuelles des adhérents (150+)
+  // Priorité élevée car chaque page est unique et importante pour le SEO local
+  const adherantsPages: MetadataRoute.Sitemap = adherents.map((adherent) => ({
+    url: `${baseUrl}/adherants/${adherent.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  // Pages individuelles des membres du bureau
+  // Priorité élevée car ce sont les représentants de l'association
+  const bureauPages: MetadataRoute.Sitemap = bureauMembers.map((member) => ({
+    url: `${baseUrl}/bureau/${member.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  }))
+
+  // Combiner toutes les pages
+  return [...staticPages, ...adherantsPages, ...bureauPages]
 }
 
 // Configuration pour la régénération statique incrémentale
