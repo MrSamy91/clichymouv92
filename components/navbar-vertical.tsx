@@ -22,7 +22,7 @@ export default function NavbarVertical() {
 
   const navLinks = [
     { href: '/', label: 'Accueil', icon: HiHome },
-    { href: '/partners', label: 'Partenaires', icon: HiUserGroup },
+    { href: 'partenaires', label: 'Partenaires', icon: HiUserGroup },
     { href: '/bureau', label: 'Bureau', icon: HiXCircle },
     { href: '/adherants', label: 'Adhérents', icon: HiUsers },
     { href: '/projets', label: 'Projets', icon: HiClipboardDocumentList },

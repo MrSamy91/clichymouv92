@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 interface Partner {
@@ -15,6 +17,8 @@ interface LogoPartnerListProps {
 }
 
 export default function LogoPartnerList({ partners }: LogoPartnerListProps) {
+  console.log('Partners:', partners.length, partners.map(p => ({ id: p.id, name: p.name, logo: p.logo })));
+
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       {partners.map((partner) => (
@@ -33,6 +37,9 @@ export default function LogoPartnerList({ partners }: LogoPartnerListProps) {
                   fill
                   sizes="(max-width: 768px) 200px, 280px"
                   className="object-contain filter group-hover:brightness-110 transition-all duration-300"
+                  onError={() => {
+                    console.error('Image failed to load:', partner.name, partner.logo);
+                  }}
                 />
               </div>
             </div>
@@ -54,11 +61,11 @@ export default function LogoPartnerList({ partners }: LogoPartnerListProps) {
             
             {/* Bouton site web avec effet glassmorphism */}
             {partner.website && (
-              <a 
+              <a
                 href={partner.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full transition-all duration-300 hover:shadow-lg border border-white/20 hover:border-white/40"
+                className="relative z-10 inline-block bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white text-xs font-medium px-4 py-2 rounded-full transition-all duration-300 hover:shadow-lg border border-white/20 hover:border-white/40"
               >
                 Visiter le site
               </a>

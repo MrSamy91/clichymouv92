@@ -22,7 +22,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/', label: 'Accueil', icon: HiHome },
-    { href: '/partners', label: 'Partenaires', icon: HiUserGroup },
+    { href: 'partenaires', label: 'Partenaires', icon: HiUserGroup },
     { href: '/projets', label: 'Projets', icon: HiClipboardDocumentList },
     { href: '/contact', label: 'Contact', icon: HiPhone },
     { href: '/about', label: 'À propos', icon: HiInformationCircle }

@@ -96,13 +96,13 @@ export const adherents: Adherent[] = [
   },
   {
     id: 10,
-    name: "BACH ET BACCHUS",
+    name: "CHATEAU CLICHY",
     company: "Cave à vins",
     description: "Cave à vins dirigée par Nicolas CHARRAT, proposant une sélection de vins de qualité et des conseils d'expert pour tous les amateurs.",
     website: "",
     phone: "06 82 01 10 52",
     logo: "/7.svg",
-    address: "10 place des Martyrs, 92110 Clichy-la-Garenne"
+    address: "43 Boulevard du Général Leclerc, 92110 Clichy-la-Garenne"
   },
   {
     id: 11,
@@ -939,7 +939,7 @@ export const adherents: Adherent[] = [
     name: "POSTO 9",
     company: "Restaurant",
     description: "Restaurant dirigé par Jeff PERSONNAZ, proposant une cuisine moderne et créative dans un cadre contemporain et convivial.",
-    website: "",
+    website: "https://leposto9.fr/",
     phone: "01 45 19 07 95",
     logo: "/7.svg",
     address: "26 rue de Paris, 92110 Clichy-la-Garenne"

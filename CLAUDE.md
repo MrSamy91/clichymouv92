@@ -68,7 +68,7 @@ pnpm lint         # Run ESLint
 
 **Image Assets:**
 - Logo files: `/public/logo-samy.svg` (main), `/public/logo-clichy-mouv.PNG`, `/public/logo-clichy-mouv2.webp`
-- Partner images: `/public/images/partners/` (SVG/WebP)
+- Partner images: `/public/imagespartenaires/` (SVG/WebP)
 - Bureau member photos: `/public/images/bureau/` 
 - Enterprise photos: `/public/images/photos_entreprises/`
 - Generic person avatars: `/public/images/personnes/`

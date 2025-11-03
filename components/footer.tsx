@@ -12,7 +12,7 @@ export default function Footer() {
 
   const navLinks = [
     { href: '/', label: 'Accueil', icon: HiHome },
-    { href: '/partners', label: 'Partenaires', icon: HiUserGroup },
+    { href: 'partenaires', label: 'Partenaires', icon: HiUserGroup },
     { href: '/adherants', label: 'Adhérents', icon: HiUsers },
     { href: '/projets', label: 'Projets', icon: HiClipboardDocumentList },
     { href: '/contact', label: 'Contact', icon: HiPhone },
@@ -83,7 +83,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/partners" className="hover:text-white transition-colors">
+                <Link href="partenaires" className="hover:text-white transition-colors">
                   Devenir partenaire
                 </Link>
               </li>

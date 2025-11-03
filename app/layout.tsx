@@ -33,6 +33,7 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://clichymouv.fr'),
   title: "ClichyMouv - Association de mouvement et bien-être",
   description: "Association de mouvement et de bien-être à Clichy-la-Garenne. Activités sportives et de loisirs pour tous les âges.",
   icons: {
