@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import HeroSection from '@/components/hero-section';
 
 export const metadata: Metadata = {
@@ -265,18 +266,18 @@ export default async function ProjectsPage() {
               <strong>4 raisons de nous rejoindre :</strong> Visibilité accrue • Participation aux événements • Soutien quotidien • Réseau solidaire
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="inline-block bg-white text-indigo-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg transition-colors"
               >
                 Nous rejoindre
-              </a>
-              <a 
-                href="/adherants" 
+              </Link>
+              <Link
+                href="/adherants"
                 className="inline-block border-2 border-white text-white hover:bg-white hover:text-indigo-600 font-semibold px-8 py-3 rounded-lg transition-colors"
               >
                 Voir nos adhérents
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import CarousselPartner from '@/components/caroussel-partner';
 import HeroSection from '@/components/hero-section';
 
@@ -53,12 +54,12 @@ export default async function HomePage() {
           
 
           <div className="mt-12">
-            <a 
+            <Link
               href="/contact"
-              className="!bg-indigo-800/60 backdrop-blur-sm hover:bg-white/30 text-white font-semibold px-8 py-3 rounded-lg transition-colors border border-white/30"
+              className="!bg-indigo-800/60 backdrop-blur-sm hover:bg-white/30 text-white font-semibold px-8 py-3 rounded-lg transition-colors border border-white/30 inline-block"
             >
               Nous contacter
-            </a>
+            </Link>
           </div>
         </div>
 

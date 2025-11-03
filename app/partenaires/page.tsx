@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import LogoPartnerList from '@/components/logo-partner-list';
 import HeroSection from '@/components/hero-section';
 
@@ -90,12 +91,12 @@ export default async function PartnersPage() {
               Rejoignez notre réseau de partenaires et contribuez au bien-être de notre communauté.
             </p>
             <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
-              <a 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
               >
                 Nous contacter
-              </a>
+              </Link>
             </div>
           </div>
         </div>

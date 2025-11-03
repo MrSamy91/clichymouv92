@@ -1,4 +1,5 @@
 import type { CardItem } from './types';
+import { generateSlug } from './utils';
 
 export type Adherent = CardItem;
 
@@ -12,7 +13,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 39 15 00",
     logo: "/7.svg",
-    address: "4 rue du Landy, 92110 Clichy-la-Garenne"
+    address: "4 rue du Landy, 92110 Clichy-la-Garenne",
+    slug: generateSlug("AGENCE AVIVA")
   },
   {
     id: 2,
@@ -22,7 +24,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "76 rue de Paris, 92110 Clichy-la-Garenne"
+    address: "76 rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("AGENCE LA GARENNE")
   },
   {
     id: 3,
@@ -32,7 +35,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "23 rue de Villeneuve, 92110 Clichy-la-Garenne"
+    address: "23 rue de Villeneuve, 92110 Clichy-la-Garenne",
+    slug: generateSlug("AL PHENIC")
   },
   {
     id: 4,
@@ -42,7 +46,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 87 66 74 66",
     logo: "/7.svg",
-    address: "2 Bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "2 Bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("ALOM")
   },
   {
     id: 5,
@@ -52,7 +57,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "3 impasse Abel Varet, 92110 Clichy-la-Garenne"
+    address: "3 impasse Abel Varet, 92110 Clichy-la-Garenne",
+    slug: generateSlug("ANAYATA")
   },
   {
     id: 6,
@@ -62,7 +68,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "59 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "59 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("AU NEZ A LA BARBE")
   },
   {
     id: 7,
@@ -72,7 +79,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 41 05 45 54",
     logo: "/7.svg",
-    address: "11 place des Martyrs, 92110 Clichy-la-Garenne"
+    address: "11 place des Martyrs, 92110 Clichy-la-Garenne",
+    slug: generateSlug("AVANTAGE GESTION")
   },
   {
     id: 8,
@@ -82,7 +90,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 55 55",
     logo: "/7.svg",
-    address: "88 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "88 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("AVANTAGE IMMOBILIER")
   },
   {
     id: 9,
@@ -92,7 +101,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "108 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "108 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("AXA")
   },
   {
     id: 10,
@@ -102,7 +112,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 82 01 10 52",
     logo: "/7.svg",
-    address: "43 Boulevard du Général Leclerc, 92110 Clichy-la-Garenne"
+    address: "43 Boulevard du Général Leclerc, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CHATEAU CLICHY")
   },
   {
     id: 11,
@@ -112,7 +123,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "55 rue de Neuilly, 92110 Clichy-la-Garenne"
+    address: "55 rue de Neuilly, 92110 Clichy-la-Garenne",
+    slug: generateSlug("BAKEWELL")
   },
   {
     id: 12,
@@ -122,7 +134,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 41 05 99 00",
     logo: "/7.svg",
-    address: "27 villa Simone Bigot, 92110 Clichy-la-Garenne"
+    address: "27 villa Simone Bigot, 92110 Clichy-la-Garenne",
+    slug: generateSlug("BAPTISTE FLEURS")
   },
   {
     id: 13,
@@ -132,7 +145,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "48 rue Pierre Bérégovoy, 92110 Clichy-la-Garenne"
+    address: "48 rue Pierre Bérégovoy, 92110 Clichy-la-Garenne",
+    slug: generateSlug("BARROSO")
   },
   {
     id: 14,
@@ -142,7 +156,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 74 54 62 65",
     logo: "/7.svg",
-    address: "8 place des Martyrs, 92110 Clichy-la-Garenne"
+    address: "8 place des Martyrs, 92110 Clichy-la-Garenne",
+    slug: generateSlug("BELISSON")
   },
   {
     id: 15,
@@ -152,7 +167,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 42 70 80 20",
     logo: "/7.svg",
-    address: "33 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "33 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("BELLA CIAO ITALIENNE JEAN JAURES")
   },
   {
     id: 16,
@@ -162,7 +178,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 39 09 01",
     logo: "/7.svg",
-    address: "96 rue Henri Barbusse, 92110 Clichy-la-Garenne"
+    address: "96 rue Henri Barbusse, 92110 Clichy-la-Garenne",
+    slug: generateSlug("BODY MINUTE")
   },
   {
     id: 17,
@@ -172,7 +189,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "6 rue du Landy, 92110 Clichy-la-Garenne"
+    address: "6 rue du Landy, 92110 Clichy-la-Garenne",
+    slug: generateSlug("BOUCHERIE SAGUET")
   },
   {
     id: 18,
@@ -182,7 +200,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 30 70 40",
     logo: "/7.svg",
-    address: "43 boulevard Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "43 boulevard Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("BRICORAMA")
   },
   {
     id: 19,
@@ -192,7 +211,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 31 77 75",
     logo: "/7.svg",
-    address: "26 allée Léon Gambetta, 92110 Clichy-la-Garenne"
+    address: "26 allée Léon Gambetta, 92110 Clichy-la-Garenne",
+    slug: generateSlug("BRULERIE DE CLICHY")
   },
   {
     id: 20,
@@ -202,7 +222,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "07 88 71 76 90",
     logo: "/7.svg",
-    address: "14 bd Victor Hugo, 92110 Clichy-la-Garenne"
+    address: "14 bd Victor Hugo, 92110 Clichy-la-Garenne",
+    slug: generateSlug("BURGA")
   },
   {
     id: 21,
@@ -212,7 +233,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "34 rue Mozart, 92110 Clichy-la-Garenne"
+    address: "34 rue Mozart, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CABANECAPECOD")
   },
   {
     id: 22,
@@ -222,7 +244,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "09 50 53 62 97",
     logo: "/7.svg",
-    address: "6 rue du Landy, 92110 Clichy-la-Garenne"
+    address: "6 rue du Landy, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CABAS BIO")
   },
   {
     id: 23,
@@ -232,7 +255,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "30 rue Chance Milly, 92110 Clichy-la-Garenne"
+    address: "30 rue Chance Milly, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CAFE CESAR")
   },
   {
     id: 24,
@@ -242,7 +266,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "09 50 64 02 03",
     logo: "/7.svg",
-    address: "3 rue de Neuilly, 92110 Clichy-la-Garenne"
+    address: "3 rue de Neuilly, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CAFE DE LA GARE")
   },
   {
     id: 25,
@@ -252,7 +277,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 21 39 48 52",
     logo: "/7.svg",
-    address: "1 rue du Landy, 92110 Clichy-la-Garenne"
+    address: "1 rue du Landy, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CAFE DE L'EGLISE")
   },
   {
     id: 26,
@@ -262,7 +288,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "61 Bd du Général Leclerc, 92110 Clichy-la-Garenne"
+    address: "61 Bd du Général Leclerc, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CAFE LE PARC")
   },
   {
     id: 27,
@@ -272,7 +299,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "31 rue des Cailloux, 92110 Clichy-la-Garenne"
+    address: "31 rue des Cailloux, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CAILLOUX DISTRIBUTION")
   },
   {
     id: 28,
@@ -282,7 +310,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "53 rue de Neuilly, 92110 Clichy-la-Garenne"
+    address: "53 rue de Neuilly, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CAROLINE PLATIAU")
   },
   {
     id: 29,
@@ -292,7 +321,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "07 85 89 80 19",
     logo: "/7.svg",
-    address: "55 rue de Neuilly, 92110 Clichy-la-Garenne"
+    address: "55 rue de Neuilly, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CHACUN SA BULLE")
   },
   {
     id: 30,
@@ -302,7 +332,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 64 56 35 05",
     logo: "/7.svg",
-    address: "21 rue de Paris, 92110 Clichy-la-Garenne"
+    address: "21 rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CHEZ FRANCOIS")
   },
   {
     id: 31,
@@ -312,7 +343,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 42 70 05 68",
     logo: "/7.svg",
-    address: "62 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "62 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CLEM & GWEN")
   },
   {
     id: 32,
@@ -322,7 +354,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 56 94 24",
     logo: "/7.svg",
-    address: "104 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "104 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CLICHY CHAUSSURES")
   },
   {
     id: 33,
@@ -332,7 +365,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 93 27 19",
     logo: "/7.svg",
-    address: "21 rue de Neuilly, 92110 Clichy-la-Garenne"
+    address: "21 rue de Neuilly, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CLOUDFOOD")
   },
   {
     id: 34,
@@ -342,7 +376,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "2 rue du Docteur Calmette, 92110 Clichy-la-Garenne"
+    address: "2 rue du Docteur Calmette, 92110 Clichy-la-Garenne",
+    slug: generateSlug("COFIN PARIS")
   },
   {
     id: 35,
@@ -352,7 +387,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 62 26 39 12",
     logo: "/7.svg",
-    address: "68 B rue Henri Barbusse, 92110 Clichy-la-Garenne"
+    address: "68 B rue Henri Barbusse, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CORDONNERIE EN LIGNE")
   },
   {
     id: 36,
@@ -362,7 +398,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 42 70 28 57",
     logo: "/7.svg",
-    address: "121 rue Henri Barbusse, 92110 Clichy-la-Garenne"
+    address: "121 rue Henri Barbusse, 92110 Clichy-la-Garenne",
+    slug: generateSlug("COURTICEO")
   },
   {
     id: 37,
@@ -372,7 +409,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "2 rue du Docteur Calmette, 92110 Clichy-la-Garenne"
+    address: "2 rue du Docteur Calmette, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CUIR DE JOUVENCE")
   },
   {
     id: 38,
@@ -382,7 +420,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "113 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "113 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CUISTOQUE")
   },
   {
     id: 39,
@@ -392,7 +431,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "07 67 24 26 05",
     logo: "/7.svg",
-    address: "94 rue Martre, 92110 Clichy-la-Garenne"
+    address: "94 rue Martre, 92110 Clichy-la-Garenne",
+    slug: generateSlug("DEL TRAITEUR VEGETAL")
   },
   {
     id: 40,
@@ -402,7 +442,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 60 60 07 38",
     logo: "/7.svg",
-    address: "108 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "108 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("DM MONETIC")
   },
   {
     id: 41,
@@ -412,7 +453,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "6 Rue du Landy, 92110 Clichy-la-Garenne"
+    address: "6 Rue du Landy, 92110 Clichy-la-Garenne",
+    slug: generateSlug("DOMI'S")
   },
   {
     id: 42,
@@ -422,7 +464,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "07 44 93 33 77",
     logo: "/7.svg",
-    address: "80 rue de Paris, 92110 Clichy-la-Garenne"
+    address: "80 rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("ELO COACH")
   },
   {
     id: 43,
@@ -432,7 +475,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "8 allées Léon Gambetta, 92110 Clichy-la-Garenne"
+    address: "8 allées Léon Gambetta, 92110 Clichy-la-Garenne",
+    slug: generateSlug("EMILIE DE GOURVILLE")
   },
   {
     id: 44,
@@ -442,7 +486,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "10 place des Martyrs, 92110 Clichy-la-Garenne"
+    address: "10 place des Martyrs, 92110 Clichy-la-Garenne",
+    slug: generateSlug("EMPREINTE ENERGETIQUE")
   },
   {
     id: 45,
@@ -452,7 +497,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 31 27 29",
     logo: "/7.svg",
-    address: "8 place de la République, 92110 Clichy-la-Garenne"
+    address: "8 place de la République, 92110 Clichy-la-Garenne",
+    slug: generateSlug("EQUILIBRE ET BEAUTE")
   },
   {
     id: 46,
@@ -462,7 +508,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 34 21 13 93",
     logo: "/7.svg",
-    address: "10 Bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "10 Bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("ESCAPADE VEGETALE")
   },
   {
     id: 47,
@@ -472,7 +519,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "09 61 37 64 94",
     logo: "/7.svg",
-    address: "50 Bd du Général Leclerc, 92110 Clichy-la-Garenne"
+    address: "50 Bd du Général Leclerc, 92110 Clichy-la-Garenne",
+    slug: generateSlug("ESPRIT D'OPTIQUE")
   },
   {
     id: 48,
@@ -482,7 +530,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 30 96 79",
     logo: "/7.svg",
-    address: "4 Rue de Paris, 92110 Clichy-la-Garenne"
+    address: "4 Rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("FINKA BOWL")
   },
   {
     id: 49,
@@ -492,7 +541,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "97 rue de Paris, 92110 Clichy-la-Garenne"
+    address: "97 rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("FUMO GRILL")
   },
   {
     id: 50,
@@ -502,7 +552,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 42 70 23 61",
     logo: "/7.svg",
-    address: "10-15 Rue Poyer, 92110 Clichy-la-Garenne"
+    address: "10-15 Rue Poyer, 92110 Clichy-la-Garenne",
+    slug: generateSlug("GARAGE DE STAEL")
   },
   {
     id: 51,
@@ -512,7 +563,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "100 Rue de Paris, 92110 Clichy-la-Garenne"
+    address: "100 Rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("HBRO")
   },
   {
     id: 52,
@@ -522,7 +574,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 42 70 55 55",
     logo: "/7.svg",
-    address: "62 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "62 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("JAURES IMMOBILIER")
   },
   {
     id: 53,
@@ -532,7 +585,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 89 70 56 45",
     logo: "/7.svg",
-    address: "46 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "46 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("JN OPTIQUE")
   },
   {
     id: 54,
@@ -542,7 +596,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 80 58",
     logo: "/7.svg",
-    address: "6 Allées Léon Gambetta, 92110 Clichy-la-Garenne"
+    address: "6 Allées Léon Gambetta, 92110 Clichy-la-Garenne",
+    slug: generateSlug("KARINE GRANGER")
   },
   {
     id: 55,
@@ -552,7 +607,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "53 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "53 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("KOALA PRESSING")
   },
   {
     id: 56,
@@ -562,7 +618,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 85 81 66 51",
     logo: "/7.svg",
-    address: "1 rue de Paris, 92110 Clichy-la-Garenne"
+    address: "1 rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LA BARRIERE DE CLICHY")
   },
   {
     id: 57,
@@ -572,7 +629,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 38 79",
     logo: "/7.svg",
-    address: "119 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "119 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LA BONNE TABLE")
   },
   {
     id: 58,
@@ -582,7 +640,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 39 42 14",
     logo: "/7.svg",
-    address: "8 allées Léon Gambetta, 92110 Clichy-la-Garenne"
+    address: "8 allées Léon Gambetta, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LA CAVE DE MORGON")
   },
   {
     id: 59,
@@ -592,7 +651,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 14 75",
     logo: "/7.svg",
-    address: "3 rue du Landy, 92110 Clichy-la-Garenne"
+    address: "3 rue du Landy, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LA CREPERIE DU LANDY")
   },
   {
     id: 60,
@@ -602,7 +662,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "09 86 21 09 23",
     logo: "/7.svg",
-    address: "34 bd du Général Leclerc, 92110 Clichy-la-Garenne"
+    address: "34 bd du Général Leclerc, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LA FROMAGERIE")
   },
   {
     id: 61,
@@ -612,7 +673,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "84 Bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "84 Bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LA PETITE BOUTIQUE")
   },
   {
     id: 62,
@@ -622,7 +684,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 41 05 07 42",
     logo: "/7.svg",
-    address: "9 place de la République, 92110 Clichy-la-Garenne"
+    address: "9 place de la République, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LA PRESSE")
   },
   {
     id: 63,
@@ -632,7 +695,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "66 rue de Neuilly, 92110 Clichy-la-Garenne"
+    address: "66 rue de Neuilly, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LA RAVIOLE FRANCAISE")
   },
   {
     id: 64,
@@ -642,7 +706,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 29 71",
     logo: "/7.svg",
-    address: "73 Bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "73 Bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LA ROMANTICA")
   },
   {
     id: 65,
@@ -652,7 +717,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 50 50 01 98",
     logo: "/7.svg",
-    address: "4 Allées de l'Europe, 92110 Clichy-la-Garenne"
+    address: "4 Allées de l'Europe, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LADY NOU")
   },
   {
     id: 66,
@@ -662,7 +728,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 13 67",
     logo: "/7.svg",
-    address: "12 Allées Léon Gambetta, 92110 Clichy-la-Garenne"
+    address: "12 Allées Léon Gambetta, 92110 Clichy-la-Garenne",
+    slug: generateSlug("L'AGENCE DES ALLEES")
   },
   {
     id: 67,
@@ -672,7 +739,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 87 09 18 24",
     logo: "/7.svg",
-    address: "81 Bd du Général Leclerc, 92110 Clichy-la-Garenne"
+    address: "81 Bd du Général Leclerc, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LANDY'S BAR")
   },
   {
     id: 68,
@@ -682,7 +750,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 41 06 03 06",
     logo: "/7.svg",
-    address: "5 bd Victor Hugo, 92110 Clichy-la-Garenne"
+    address: "5 bd Victor Hugo, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LE BURLINGUE")
   },
   {
     id: 69,
@@ -692,7 +761,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 56 95",
     logo: "/7.svg",
-    address: "43 rue de l'Avenir, 92110 Clichy-la-Garenne"
+    address: "43 rue de l'Avenir, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LE CAP VERT")
   },
   {
     id: 70,
@@ -702,7 +772,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 61 05 74 77",
     logo: "/7.svg",
-    address: "13 rue Henri Barbusse, 92110 Clichy-la-Garenne"
+    address: "13 rue Henri Barbusse, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LE DODO POSE")
   },
   {
     id: 71,
@@ -712,7 +783,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 26 89",
     logo: "/7.svg",
-    address: "111 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "111 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LE GALOPIN")
   },
   {
     id: 72,
@@ -722,7 +794,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 24 24 41 02",
     logo: "/7.svg",
-    address: "86 rue de Paris, 92110 Clichy-la-Garenne"
+    address: "86 rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LE PASSE DORE")
   },
   {
     id: 73,
@@ -732,7 +805,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 42 70 09 01",
     logo: "/7.svg",
-    address: "57 Bd Victor Hugo, 92110 Clichy-la-Garenne"
+    address: "57 Bd Victor Hugo, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LE STENDHAL")
   },
   {
     id: 74,
@@ -742,7 +816,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "09 86 28 79 79",
     logo: "/7.svg",
-    address: "70 rue de Neuilly, 92110 Clichy-la-Garenne"
+    address: "70 rue de Neuilly, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LEA BULLE CASY")
   },
   {
     id: 75,
@@ -752,7 +827,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 57 64 08 72",
     logo: "/7.svg",
-    address: "14 Allées Léon Gambetta, 92110 Clichy-la-Garenne"
+    address: "14 Allées Léon Gambetta, 92110 Clichy-la-Garenne",
+    slug: generateSlug("L'EDITE")
   },
   {
     id: 76,
@@ -762,7 +838,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "09 86 28 79 79",
     logo: "/7.svg",
-    address: "14 Allées Léon Gambetta, 92110 Clichy-la-Garenne"
+    address: "14 Allées Léon Gambetta, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LEON BULLE")
   },
   {
     id: 77,
@@ -772,7 +849,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 41 27 05 03",
     logo: "/7.svg",
-    address: "2 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "2 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("L'ESPLANADE")
   },
   {
     id: 78,
@@ -782,7 +860,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "20 place des Martyrs, 92110 Clichy-la-Garenne"
+    address: "20 place des Martyrs, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LHOTEL AVOCATS")
   },
   {
     id: 79,
@@ -792,7 +871,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "15 rue Victor Méric, 92110 Clichy-la-Garenne"
+    address: "15 rue Victor Méric, 92110 Clichy-la-Garenne",
+    slug: generateSlug("L'IMPRIMERIE HOTEL")
   },
   {
     id: 80,
@@ -802,7 +882,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 62 69 59 42",
     logo: "/7.svg",
-    address: "6 place des Martyrs, 92110 Clichy-la-Garenne"
+    address: "6 place des Martyrs, 92110 Clichy-la-Garenne",
+    slug: generateSlug("MAISONNELO")
   },
   {
     id: 81,
@@ -812,7 +893,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "18 rue de Paris, 92110 Clichy-la-Garenne"
+    address: "18 rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("MAMA PIERROGI JAPIEROGI")
   },
   {
     id: 82,
@@ -822,7 +904,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 42 70 25 53",
     logo: "/7.svg",
-    address: "7 rue Achille Adam, 92110 Clichy-la-Garenne"
+    address: "7 rue Achille Adam, 92110 Clichy-la-Garenne",
+    slug: generateSlug("MARGUERITE")
   },
   {
     id: 83,
@@ -832,7 +915,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "24 allées Léon Gambetta, 92110 Clichy-la-Garenne"
+    address: "24 allées Léon Gambetta, 92110 Clichy-la-Garenne",
+    slug: generateSlug("MICKAEL CIREUR")
   },
   {
     id: 84,
@@ -842,7 +926,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "77 rue de Paris, 92110 Clichy-la-Garenne"
+    address: "77 rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("MIMETISM AGENCY")
   },
   {
     id: 85,
@@ -852,7 +937,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 45 03",
     logo: "/7.svg",
-    address: "47 Bd du Général Leclerc, 92110 Clichy-la-Garenne"
+    address: "47 Bd du Général Leclerc, 92110 Clichy-la-Garenne",
+    slug: generateSlug("MINA MARLENE LINGERIE")
   },
   {
     id: 86,
@@ -862,7 +948,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 81 93 18 86",
     logo: "/7.svg",
-    address: "1 rue Leroy, 92110 Clichy-la-Garenne"
+    address: "1 rue Leroy, 92110 Clichy-la-Garenne",
+    slug: generateSlug("MISTERBLAD ENCADREMENT")
   },
   {
     id: 87,
@@ -872,7 +959,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 37 44 61 30",
     logo: "/7.svg",
-    address: "6 rue des Bateliers, 92110 Clichy-la-Garenne"
+    address: "6 rue des Bateliers, 92110 Clichy-la-Garenne",
+    slug: generateSlug("MLC STUDIO")
   },
   {
     id: 88,
@@ -882,7 +970,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "33 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "33 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("NADEGE PHOTOGRAPHE")
   },
   {
     id: 89,
@@ -892,7 +981,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 84 78 62 65",
     logo: "/7.svg",
-    address: "125 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "125 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("PALOMANO")
   },
   {
     id: 90,
@@ -902,7 +992,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 12 98",
     logo: "/7.svg",
-    address: "2 place des Martyrs, 92110 Clichy-la-Garenne"
+    address: "2 place des Martyrs, 92110 Clichy-la-Garenne",
+    slug: generateSlug("PHARMACIE DE LA LIBERTE")
   },
   {
     id: 91,
@@ -912,7 +1003,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 94 31 48",
     logo: "/7.svg",
-    address: "1 Bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "1 Bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("PHARMACIE LA FAYETTE")
   },
   {
     id: 92,
@@ -922,7 +1014,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "8 place de la République, 92110 Clichy-la-Garenne"
+    address: "8 place de la République, 92110 Clichy-la-Garenne",
+    slug: generateSlug("PHILIPPE LUNETIER")
   },
   {
     id: 93,
@@ -932,7 +1025,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 71 05 58 88",
     logo: "/7.svg",
-    address: "6 place des Martyrs, 92110 Clichy-la-Garenne"
+    address: "6 place des Martyrs, 92110 Clichy-la-Garenne",
+    slug: generateSlug("PLACE DES FETES")
   },
   {
     id: 94,
@@ -942,7 +1036,8 @@ export const adherents: Adherent[] = [
     website: "https://leposto9.fr/",
     phone: "01 45 19 07 95",
     logo: "/7.svg",
-    address: "26 rue de Paris, 92110 Clichy-la-Garenne"
+    address: "26 rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("POSTO 9")
   },
   {
     id: 95,
@@ -952,7 +1047,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 42 70 11 73",
     logo: "/7.svg",
-    address: "119 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "119 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("QUADRO")
   },
   {
     id: 96,
@@ -962,7 +1058,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 63 15 19 61",
     logo: "/7.svg",
-    address: "5 Rue de Paris, 92110 Clichy-la-Garenne"
+    address: "5 Rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("QUATTRO STRAGIONI")
   },
   {
     id: 97,
@@ -972,7 +1069,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 72 29",
     logo: "/7.svg",
-    address: "66 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "66 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("REGA'LOU")
   },
   {
     id: 98,
@@ -982,7 +1080,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 84 74 88 00",
     logo: "/7.svg",
-    address: "90 bd du Général Roguet, 92110 Clichy-la-Garenne"
+    address: "90 bd du Général Roguet, 92110 Clichy-la-Garenne",
+    slug: generateSlug("RESIDENCE MONTANA")
   },
   {
     id: 99,
@@ -992,7 +1091,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "10 rue de l'Ancienne Mairie, 92110 Clichy-la-Garenne"
+    address: "10 rue de l'Ancienne Mairie, 92110 Clichy-la-Garenne",
+    slug: generateSlug("SAS ZE MOVE")
   },
   {
     id: 100,
@@ -1002,7 +1102,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 42 70 14 08",
     logo: "/7.svg",
-    address: "90 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "90 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("SFR")
   },
   {
     id: 101,
@@ -1012,7 +1113,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 42 70 74 75",
     logo: "/7.svg",
-    address: "10 rue Dagobert, 92110 Clichy-la-Garenne"
+    address: "10 rue Dagobert, 92110 Clichy-la-Garenne",
+    slug: generateSlug("SHIVA")
   },
   {
     id: 102,
@@ -1022,7 +1124,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 70 15 92 52",
     logo: "/7.svg",
-    address: "68 Bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "68 Bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("SMAKQ CLICHY E-CIG")
   },
   {
     id: 103,
@@ -1032,7 +1135,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 15 15 42 76",
     logo: "/7.svg",
-    address: "86 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "86 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("SONOLY SNL JN")
   },
   {
     id: 104,
@@ -1042,7 +1146,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "3 allée des petits marais, 92110 Clichy-la-Garenne"
+    address: "3 allée des petits marais, 92110 Clichy-la-Garenne",
+    slug: generateSlug("STEPHANE MICHAUX")
   },
   {
     id: 105,
@@ -1052,7 +1157,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 30 24 95",
     logo: "/7.svg",
-    address: "12 rue de Paris, 92110 Clichy-la-Garenne"
+    address: "12 rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("STUDIO DU TEMPS")
   },
   {
     id: 106,
@@ -1062,7 +1168,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 37 01 36",
     logo: "/7.svg",
-    address: "11 rue Charles et René Auffray, 92110 Clichy-la-Garenne"
+    address: "11 rue Charles et René Auffray, 92110 Clichy-la-Garenne",
+    slug: generateSlug("STYLE ET TENDANCE")
   },
   {
     id: 107,
@@ -1072,7 +1179,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 23 63 43 07",
     logo: "/7.svg",
-    address: "19 rue Auboin, 92110 Clichy-la-Garenne"
+    address: "19 rue Auboin, 92110 Clichy-la-Garenne",
+    slug: generateSlug("TRESORS DE SORAYA")
   },
   {
     id: 108,
@@ -1082,7 +1190,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "105 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "105 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("TRIBE PARIS CLICHY HOTEL")
   },
   {
     id: 109,
@@ -1092,7 +1201,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 98 80 69 33",
     logo: "/7.svg",
-    address: "11 rue Morice, 92110 Clichy-la-Garenne"
+    address: "11 rue Morice, 92110 Clichy-la-Garenne",
+    slug: generateSlug("TRIP'UP")
   },
   {
     id: 110,
@@ -1102,7 +1212,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 74 54 68 81",
     logo: "/7.svg",
-    address: "6 rue Martre, 92110 Clichy-la-Garenne"
+    address: "6 rue Martre, 92110 Clichy-la-Garenne",
+    slug: generateSlug("TROPICALISIMO")
   },
   {
     id: 111,
@@ -1112,7 +1223,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 95 91 36 75",
     logo: "/7.svg",
-    address: "3 Impasse Barbier, 92110 Clichy-la-Garenne"
+    address: "3 Impasse Barbier, 92110 Clichy-la-Garenne",
+    slug: generateSlug("VG BALENTI")
   },
   {
     id: 112,
@@ -1122,7 +1234,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 42 70 53 16",
     logo: "/7.svg",
-    address: "7 rue Charles et René Auffray, 92110 Clichy-la-Garenne"
+    address: "7 rue Charles et René Auffray, 92110 Clichy-la-Garenne",
+    slug: generateSlug("VIASETTE - BIACCI BIACCI")
   },
   {
     id: 113,
@@ -1132,7 +1245,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 10 86 34 66",
     logo: "/7.svg",
-    address: "5 rue Robert Lavergne, 92600 Asnières"
+    address: "5 rue Robert Lavergne, 92600 Asnières",
+    slug: generateSlug("XUE DESIGN")
   },
   {
     id: 114,
@@ -1142,7 +1256,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "69 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "69 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("YAC")
   },
   {
     id: 115,
@@ -1152,7 +1267,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "55 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "55 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("YVES THURIES")
   },
   {
     id: 116,
@@ -1162,7 +1278,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 47 31 51 70",
     logo: "/7.svg",
-    address: "2 rue Marcellin Berthelot, 92110 Clichy-la-Garenne"
+    address: "2 rue Marcellin Berthelot, 92110 Clichy-la-Garenne",
+    slug: generateSlug("PIERRE PERRIN")
   },
   {
     id: 117,
@@ -1172,7 +1289,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "89 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "89 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("COLUMBUS CAFE CLICHY")
   },
   {
     id: 118,
@@ -1182,7 +1300,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "21 rue de Neuilly, 92110 Clichy-la-Garenne"
+    address: "21 rue de Neuilly, 92110 Clichy-la-Garenne",
+    slug: generateSlug("INSTANT DONUTS")
   },
   {
     id: 119,
@@ -1192,7 +1311,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "40 Bis rue de Villeneuve, 92110 Clichy-la-Garenne"
+    address: "40 Bis rue de Villeneuve, 92110 Clichy-la-Garenne",
+    slug: generateSlug("DE LA POTTERIE")
   },
   {
     id: 120,
@@ -1202,7 +1322,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "60 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "60 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("MAISON CAMBON SARL DIL")
   },
   {
     id: 121,
@@ -1212,7 +1333,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 80 88 10 97",
     logo: "/7.svg",
-    address: "2 rue Pasteur, 92110 Clichy-la-Garenne"
+    address: "2 rue Pasteur, 92110 Clichy-la-Garenne",
+    slug: generateSlug("BAMS LAUNDRY")
   },
   {
     id: 122,
@@ -1222,7 +1344,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "07 60 98 82 09",
     logo: "/7.svg",
-    address: "3 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "3 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("MEDICAL LAFAYETTE")
   },
   {
     id: 123,
@@ -1232,7 +1355,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "5 rue Castères, 92110 Clichy-la-Garenne"
+    address: "5 rue Castères, 92110 Clichy-la-Garenne",
+    slug: generateSlug("SOCIETE ELEKTRO")
   },
   {
     id: 124,
@@ -1242,7 +1366,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "32 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "32 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("HOTEL NATIONAL")
   },
   {
     id: 125,
@@ -1252,7 +1377,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 89 15 34 67",
     logo: "/7.svg",
-    address: "1 rue Dagobert, 92110 Clichy-la-Garenne"
+    address: "1 rue Dagobert, 92110 Clichy-la-Garenne",
+    slug: generateSlug("PHOTOGRAPHE")
   },
   {
     id: 126,
@@ -1262,7 +1388,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "06 10 36 64 57",
     logo: "/7.svg",
-    address: "2 bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "2 bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("THE BACK SQUARE-COLLECTIF")
   },
   {
     id: 127,
@@ -1272,7 +1399,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "39 rue Jean Jaurès, 94120 Bagnolet"
+    address: "39 rue Jean Jaurès, 94120 Bagnolet",
+    slug: generateSlug("FLEURS DE BAGNOLET")
   },
   {
     id: 128,
@@ -1282,7 +1410,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "9 rue Victor Méric, 92110 Clichy-la-Garenne"
+    address: "9 rue Victor Méric, 92110 Clichy-la-Garenne",
+    slug: generateSlug("S.A.I.A. Group")
   },
   {
     id: 129,
@@ -1292,7 +1421,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "86 rue de Paris, 92110 Clichy-la-Garenne"
+    address: "86 rue de Paris, 92110 Clichy-la-Garenne",
+    slug: generateSlug("ROCHE NOIRE")
   },
   {
     id: 130,
@@ -1302,7 +1432,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "3 place du marché, 92110 Clichy-la-Garenne"
+    address: "3 place du marché, 92110 Clichy-la-Garenne",
+    slug: generateSlug("CAMPANILE CLICHY CENTRE")
   },
   {
     id: 131,
@@ -1312,7 +1443,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "102 bis rue Martre, 92110 Clichy-la-Garenne"
+    address: "102 bis rue Martre, 92110 Clichy-la-Garenne",
+    slug: generateSlug("LES 3 CONTINENTS")
   },
   {
     id: 132,
@@ -1322,7 +1454,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 45 26 70 76",
     logo: "/7.svg",
-    address: "6 rue d'Esteinnes d'Orves, 92110 Clichy-la-Garenne"
+    address: "6 rue d'Esteinnes d'Orves, 92110 Clichy-la-Garenne",
+    slug: generateSlug("INTENCITY")
   },
   {
     id: 133,
@@ -1332,7 +1465,8 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "01 41 06 92 41",
     logo: "/7.svg",
-    address: "3 place des Martyrs, 92110 Clichy-la-Garenne"
+    address: "3 place des Martyrs, 92110 Clichy-la-Garenne",
+    slug: generateSlug("SOCIETE GENERALE")
   },
   {
     id: 134,
@@ -1342,6 +1476,7 @@ export const adherents: Adherent[] = [
     website: "",
     phone: "",
     logo: "/7.svg",
-    address: "75 Bd Jean Jaurès, 92110 Clichy-la-Garenne"
+    address: "75 Bd Jean Jaurès, 92110 Clichy-la-Garenne",
+    slug: generateSlug("ANAYA STEAK HOUSE")
   }
 ];

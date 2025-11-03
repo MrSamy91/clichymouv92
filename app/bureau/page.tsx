@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useMemo } from 'react';
+import Link from 'next/link';
 import BureauList from '@/components/bureau-list';
 import HeroSection from '@/components/hero-section';
 import { bureauMembers } from '@/lib/list-of-bureau';
@@ -78,12 +79,12 @@ export default function BureauPage() {
               ClichyMouv recherche régulièrement des bénévoles motivés pour enrichir notre équipe 
               et contribuer au développement de l&apos;association.
             </p>
-            <a 
+            <Link
               href="/contact"
               className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3 rounded-lg transition-colors"
             >
               Contactez-nous
-            </a>
+            </Link>
           </div>
         </div>
       </div>

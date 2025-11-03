@@ -8,4 +8,5 @@ export interface CardItem {
   phone?: string;
   logo: string;
   address: string;
+  slug: string; // Slug pour URL individuelle
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useMemo } from 'react';
+import Link from 'next/link';
 import AdherantList from '@/components/adherant-list';
 import HeroSection from '@/components/hero-section';
 import SearchBar from '@/components/search-bar';
@@ -95,12 +96,12 @@ export default function AdherantsPage() {
               Rejoignez notre démarche d&apos;entraide et développez votre activité 
               au sein d&apos;une communauté solidaire et dynamique.
             </p>
-            <a 
+            <Link
               href="/contact"
               className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3 rounded-lg transition-colors"
             >
               Devenir adhérent
-            </a>
+            </Link>
           </div>
         </div>
       </div>

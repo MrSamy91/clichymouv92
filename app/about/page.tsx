@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import HeroSection from '@/components/hero-section';
 
 export const metadata: Metadata = {
@@ -184,12 +185,12 @@ export default async function AboutPage() {
                 <p className="mb-4 opacity-90">
                   4 piliers nous rassemblent : <strong>Réseau • Événements • Promotion • Soutien</strong>
                 </p>
-                <a 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="inline-block bg-white text-indigo-600 hover:bg-gray-100 font-semibold px-6 py-3 rounded-lg transition-colors"
                 >
                   Rejoindre le mouvement
-                </a>
+                </Link>
               </div>
             </div>
           </div>

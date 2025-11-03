@@ -1,4 +1,5 @@
 import type { CardItem } from './types';
+import { generateSlug } from './utils';
 
 export type BureauMember = CardItem;
 
@@ -11,7 +12,8 @@ export const bureauMembers: BureauMember[] = [
     description: "Gérant des restaurant L'Esplanade et Le Palais.",
     website: "https://esplanadeclichy.com/",
     logo: "/images/bureau/ilies-ajouid.jpg",
-    address: "Clichy-la-Garenne, 92110"
+    address: "Clichy-la-Garenne, 92110",
+    slug: generateSlug("Ilies Ajouid")
   },
   {
     id: 2,
@@ -20,7 +22,8 @@ export const bureauMembers: BureauMember[] = [
     description: "Gérant de MisterBlad Encadrements.",
     website: "https://misterblad.com/",
     logo: "/images/bureau/guilaume-ortega.jpg",
-    address: "Clichy-la-Garenne, 92110"
+    address: "Clichy-la-Garenne, 92110",
+    slug: generateSlug("Guillaume Ortega")
   },
   {
     id: 1,
@@ -29,7 +32,8 @@ export const bureauMembers: BureauMember[] = [
     description: "Agent Immo depuis 2004 et gérante de Avantage Immobilier.",
     website: "https://avantage-immobilier.fr/",
     logo: "/images/bureau/delphine-rizzo.jpg",
-    address: "Clichy-la-Garenne, 92110"
+    address: "Clichy-la-Garenne, 92110",
+    slug: generateSlug("Delphine Rizzo")
   },
   {
     id: 4,
@@ -38,7 +42,8 @@ export const bureauMembers: BureauMember[] = [
     description: "Gestionnaire administratif au seins du Posto 9.",
     website: "",
     logo: "/images/bureau/julien-gremy.jpg",
-    address: "Clichy-la-Garenne, 92110"
+    address: "Clichy-la-Garenne, 92110",
+    slug: generateSlug("Julien Gremy")
   },
   {
     id: 8,
@@ -47,7 +52,8 @@ export const bureauMembers: BureauMember[] = [
     description: "Ancienne commercante à Clichy.",
     website: "",
     logo: "/images/bureau/pascale-carrere.jpg",
-    address: "Clichy-la-Garenne, 92110"
+    address: "Clichy-la-Garenne, 92110",
+    slug: generateSlug("Pascale Carrere")
   },
   {
     id: 3,
@@ -56,7 +62,8 @@ export const bureauMembers: BureauMember[] = [
     description: "Coach professionnel.",
     website: "https://www.elodiemuzzin-coaching.fr/",
     logo: "/images/bureau/elodie-muzzin.jpg",
-    address: "Clichy-la-Garenne, 92110"
+    address: "Clichy-la-Garenne, 92110",
+    slug: generateSlug("Elodie Muzzin")
   },
   {
     id: 5,
@@ -65,7 +72,8 @@ export const bureauMembers: BureauMember[] = [
     description: "Gérante du Restaurant Le Cap-Vert",
     website: "",
     logo: "/images/bureau/jessica-da-veiga.jpg",
-    address: "Clichy-la-Garenne, 92110"
+    address: "Clichy-la-Garenne, 92110",
+    slug: generateSlug("Jessica Da Veiga")
   },
   {
     id: 6,
@@ -74,7 +82,8 @@ export const bureauMembers: BureauMember[] = [
     description: "Gérante du Salon de coiffure Karine Granger.",
     website: "",
     logo: "/images/bureau/karine-granger.jpg",
-    address: "Clichy-la-Garenne, 92110"
+    address: "Clichy-la-Garenne, 92110",
+    slug: generateSlug("Karine Granger")
   },
   {
     id: 9,
@@ -83,6 +92,7 @@ export const bureauMembers: BureauMember[] = [
     description: "Gérante de deux boutiques Léon Bulle et Léa Bulle.",
     website: "",
     logo: "/images/bureau/sandrine-mevil-blanche.jpg",
-    address: "Clichy-la-Garenne, 92110"
+    address: "Clichy-la-Garenne, 92110",
+    slug: generateSlug("Sandrine Mevil Blanche")
   }
 ];

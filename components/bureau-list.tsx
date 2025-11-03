@@ -19,7 +19,12 @@ export default function BureauList({
       {members
         .filter((member) => member && member.id !== undefined)
         .map((member) => (
-          <CardDisplay key={member.id} item={member} idPrefix="bureau" />
+          <CardDisplay
+            key={member.id}
+            item={member}
+            idPrefix="bureau"
+            linkPrefix="bureau"
+          />
         ))}
       
       {/* Affichage des skeletons pendant le chargement */}

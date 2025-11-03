@@ -17,7 +17,12 @@ export default function AdherantList({
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {/* Affichage des cartes réelles */}
       {adherants.map((adherant) => (
-        <CardDisplay key={adherant.id} item={adherant} idPrefix="adherant" />
+        <CardDisplay
+          key={adherant.id}
+          item={adherant}
+          idPrefix="adherant"
+          linkPrefix="adherants"
+        />
       ))}
       
       {/* Affichage des skeletons pendant le chargement */}
